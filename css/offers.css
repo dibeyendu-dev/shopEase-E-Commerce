@@ -79,6 +79,7 @@
 }
 
 .offer-image img {
+    border-radius: 18px;
     width: 100%;
     max-width: 430px;
     transition: .5s ease;
