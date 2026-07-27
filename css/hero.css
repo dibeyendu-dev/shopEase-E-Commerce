@@ -1,0 +1,275 @@
+.hero {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-content,
+.hero-image {
+    flex: 1;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: #dbeafe;
+    color: #2563eb;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: .9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    max-width: 550px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: .3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, .3);
+}
+
+.btn-secondary {
+    background: #fff;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .15);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+}
+
+.btn-secondary:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+    border: 3px solid rgba(126, 19, 226, 0.288);
+    object-fit: cover;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, .15));
+    transition: .4s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+.discount-card {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fff;
+    padding: 16px 22px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
+    animation: float 3s ease-in-out infinite;
+}
+
+.discount-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2563eb;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
+.discount-info h3 {
+    margin: 0 0 5px;
+    font-size: 1.2rem;
+    color: #1e293b;
+}
+
+.discount-info p {
+    margin: 0;
+    color: #64748b;
+    font-size: .9rem;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.customer-card {
+    position: absolute;
+    right: -20px;
+    bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #fff;
+    padding: 16px 22px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
+    animation: float 4s ease-in-out infinite;
+}
+
+.customer-images {
+    display: flex;
+}
+
+.customer-images img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #39e0ec;
+    margin-left: -12px;
+}
+
+.customer-images img:first-child {
+    margin-left: 0;
+}
+
+.customer-info h4 {
+    margin: 0 0 5px;
+    color: #1e293b;
+    font-size: 1rem;
+}
+
+.customer-info p {
+    margin: 0;
+    color: #64748b;
+    font-size: .9rem;
+}
+
+@media (max-width:991px) {
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .hero-content p {
+        max-width: 100%;
+        margin: 0 auto 35px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image img {
+        max-width: 450px;
+    }
+
+    .discount-card {
+        top: 20px;
+        left: 0;
+    }
+
+    .customer-card {
+        right: 0;
+        bottom: 20px;
+    }
+
+}
+
+@media (max-width:576px) {
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-image img {
+        max-width: 320px;
+    }
+
+    .discount-card,
+    .customer-card {
+        position: static;
+        margin-top: 20px;
+    }
+
+}
