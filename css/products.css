@@ -10,11 +10,12 @@
 }
 
 .product-card {
+    position: relative;
     background: #eae5e5;
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .8);
-    transition: .3s ease;
+    transition: var(--transition);
 }
 
 .product-card:hover {
@@ -24,7 +25,7 @@
 }
 
 .product-image {
-    padding: 10px;
+    padding: 30px;
     background: #faf8fc;
     display: flex;
     justify-content: center;
@@ -36,7 +37,7 @@
     min-width: 160px;
     border-radius: 18px;
     height: 220px;
-    transition: .3s ease;
+    transition: var(--transition);
 }
 
 .product-image img:hover {
@@ -95,4 +96,52 @@
 .old-price {
     color: #eb0520;
     text-decoration: line-through;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    background: #ef4444;
+    color: var(--light);
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: .85rem;
+    font-weight: 600;
+    z-index: 2;
+}
+.wishlist-btn{
+    position: absolute;
+    top: 25px ;
+    right: 35px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50px;
+    color:var(--ho-color);
+    background: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .1);
+    z-index: 1;
+    transition:.3s ease;
+}
+.wishlist-btn:hover{
+    color: red;
+}
+.cart-btn{
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background:var(--primary);
+    color: var(--light);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.cart-btn:hover{
+    background: #1d4e8b;
+    transform: translateY(-4px);
 }
