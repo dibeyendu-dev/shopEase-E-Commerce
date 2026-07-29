@@ -188,3 +188,81 @@
         max-width:250px;
     }
 }
+/* =========================== Testimonials Responsive =========================== */
+
+@media (max-width:991px){
+    .testimonial-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+
+    .testimonial-card{
+        padding:25px;
+    }
+}
+
+@media (max-width:768px){
+    .testimonials{
+        padding:80px 0;
+    }
+
+    .testimonial-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .testimonial-card{
+        padding:25px;
+    }
+
+    .testimonial-header img{
+        width:65px;
+        height:65px;
+    }
+
+    .testimonial-header h3{
+        font-size:1rem;
+    }
+
+    .stars{
+        font-size:1.1rem;
+    }
+}
+
+@media (max-width:576px){
+    .testimonials{
+        padding:60px 0;
+    }
+
+    .testimonial-card{
+        padding:20px;
+        border-radius:16px;
+    }
+
+    .testimonial-header{
+        gap:12px;
+    }
+
+    .testimonial-header img{
+        width:55px;
+        height:55px;
+    }
+
+    .testimonial-header h3{
+        font-size:.95rem;
+    }
+
+    .testimonial-header span{
+        font-size:.8rem;
+    }
+
+    .stars{
+        font-size:1rem;
+        letter-spacing:2px;
+    }
+
+    .testimonial-card p{
+        font-size:.9rem;
+        line-height:1.7;
+    }
+}
