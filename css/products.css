@@ -145,3 +145,50 @@
     background: #1d4e8b;
     transform: translateY(-4px);
 }
+/* =========================== Products Page =========================== */
+
+.page-header{
+    padding:100px 0;
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+    text-align:center;
+    color:#ffffff;
+}
+
+.page-header h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.page-header p{
+    max-width:650px;
+    margin:auto;
+    font-size:1.05rem;
+    line-height:1.8;
+}
+
+.products-page{
+    padding:80px 0;
+    background:#f8fafc;
+}
+
+.products-layout{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:35px;
+    align-items:start;
+}
+
+.sidebar{
+    background:#ffffff;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    position:sticky;
+    top:100px;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
