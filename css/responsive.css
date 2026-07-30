@@ -351,3 +351,59 @@
         font-size:.95rem;
     }
 }
+/* =========================== Footer Responsive =========================== */
+@media (max-width:991px){
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:40px 30px;
+    }
+}
+
+@media (max-width:768px){
+    .footer{
+        padding:70px 0 20px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+        text-align:center;
+    }
+
+    .footer-social{
+        justify-content:center;
+    }
+
+    .footer-links ul li a:hover{
+        padding-left:0;
+    }
+}
+
+@media (max-width:576px){
+    .footer{
+        padding:60px 0 20px;
+    }
+
+    .footer-logo{
+        font-size:1.8rem;
+    }
+
+    .footer-about p{
+        font-size:.95rem;
+    }
+
+    .footer-links h3,
+    .footer-contact h3{
+        font-size:1.2rem;
+    }
+
+    .footer-social a{
+        width:42px;
+        height:42px;
+        font-size:.95rem;
+    }
+
+    .footer-bottom p{
+        font-size:.85rem;
+    }
+}
