@@ -3,52 +3,59 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products | ShopEase</title>
+
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
 
 <body>
 
-    <nav class="navbar">
+    <header class="header">
 
         <div class="container">
 
-            <a href="index.html" class="logo">
-                ShopEase
-            </a>
+            <nav class="navbar">
 
-            <ul class="nav-links">
+                <a href="index.html" class="logo">
+                    Shop<span>Ease</span>
+                </a>
 
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
+                <ul class="nav-links">
 
-                <li>
-                    <a href="products.html" class="active">Products</a>
-                </li>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
 
-                <li>
-                    <a href="wishlist.html" class="wishlist-link">
-                        <i class="fa-regular fa-heart"></i>
-                        <span id="wishlistCount">0</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="products.html" class="active">Products</a>
+                    </li>
 
-                <li>
-                    <a href="cart.html" class="cart-link">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <span id="cartCount">0</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="wishlist.html" class="icon-btn">
+                            <i class="fa-regular fa-heart"></i>
+                            <span id="wishlistCount" class="cart-count">0</span>
+                        </a>
+                    </li>
 
-            </ul>
+                    <li>
+                        <a href="cart.html" class="icon-btn cart-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span id="cartCount" class="cart-count">0</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
 
         </div>
 
-    </nav>
+    </header>
 
     <header class="page-header">
 
@@ -95,8 +102,11 @@
                     <div class="filter-box">
 
                         <h3>
+
                             <i class="fa-solid fa-filter"></i>
+
                             Categories
+
                         </h3>
 
                         <button class="filter-btn active">
@@ -124,8 +134,11 @@
                     <div class="sort-box">
 
                         <h3>
+
                             <i class="fa-solid fa-arrow-down-wide-short"></i>
+
                             Sort By
+
                         </h3>
 
                         <select id="sortSelect">
@@ -152,7 +165,7 @@
 
                 </aside>
 
-                <div class="products-grid" id="productsGrid">
+                <div id="productsGrid" class="products-grid">
 
                 </div>
 

@@ -122,3 +122,114 @@ Remove
     updateSummary();
 
 }
+function updateSummary() {
+
+    const items = cart.reduce((total, product) => {
+
+        return total + product.quantity;
+
+    }, 0);
+
+    const price = cart.reduce((total, product) => {
+
+        return total + (product.price * product.quantity);
+
+    }, 0);
+
+    totalItems.textContent = items;
+
+    totalPrice.textContent = "₹" + price;
+
+}
+
+function increaseQuantity() {
+
+    const id = Number(this.dataset.id);
+
+    const product = cart.find(item => item.id === id);
+
+    if (product) {
+
+        product.quantity++;
+
+        saveCart();
+
+        renderCart();
+
+    }
+
+}
+
+function decreaseQuantity() {
+
+    const id = Number(this.dataset.id);
+
+    const product = cart.find(item => item.id === id);
+
+    if (product) {
+
+        if (product.quantity > 1) {
+
+            product.quantity--;
+
+        }
+
+        else {
+
+            cart = cart.filter(item => item.id !== id);
+
+        }
+
+        saveCart();
+
+        renderCart();
+
+    }
+
+}
+
+function removeProduct() {
+
+    const id = Number(this.dataset.id);
+
+    cart = cart.filter(item => item.id !== id);
+
+    saveCart();
+
+    renderCart();
+
+}
+
+function cartEvents() {
+
+    const plusButtons = document.querySelectorAll(".plus-btn");
+
+    const minusButtons = document.querySelectorAll(".minus-btn");
+
+    const removeButtons = document.querySelectorAll(".remove-btn");
+
+    plusButtons.forEach(button => {
+
+        button.addEventListener("click", increaseQuantity);
+
+    });
+
+    minusButtons.forEach(button => {
+
+        button.addEventListener("click", decreaseQuantity);
+
+    });
+
+    removeButtons.forEach(button => {
+
+        button.addEventListener("click", removeProduct);
+
+    });
+
+}
+
+loadCart();
+
+renderCart();
+
+cartEvents();
