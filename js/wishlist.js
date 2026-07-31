@@ -154,3 +154,88 @@ Add To Cart
     updateCounts();
 
 }
+function addToCart() {
+
+    const id = Number(this.dataset.id);
+
+    const existingProduct = cart.find(item => item.id === id);
+
+    if (existingProduct) {
+
+        existingProduct.quantity++;
+
+    }
+
+    else {
+
+        const product = wishlist.find(item => item.id === id);
+
+        cart.push({
+
+            id: product.id,
+
+            name: product.name,
+
+            category: product.category,
+
+            price: product.price,
+
+            rating: product.rating,
+
+            discount: product.discount,
+
+            image: product.image,
+
+            quantity: 1
+
+        });
+
+    }
+
+    saveCart();
+
+    updateCounts();
+
+    alert("Product Added To Cart");
+
+}
+
+function removeWishlistItem() {
+
+    const id = Number(this.dataset.id);
+
+    wishlist = wishlist.filter(item => item.id !== id);
+
+    saveWishlist();
+
+    renderWishlist();
+
+}
+
+function wishlistEvents() {
+
+    const addCartButtons = document.querySelectorAll(".add-cart-btn");
+
+    const removeButtons = document.querySelectorAll(".remove-wishlist-btn");
+
+    addCartButtons.forEach(button => {
+
+        button.addEventListener("click", addToCart);
+
+    });
+
+    removeButtons.forEach(button => {
+
+        button.addEventListener("click", removeWishlistItem);
+
+    });
+
+}
+
+loadWishlist();
+
+loadCart();
+
+renderWishlist();
+
+wishlistEvents();
