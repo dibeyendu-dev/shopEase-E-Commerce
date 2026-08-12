@@ -12,11 +12,14 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/categories-page.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
+
+    <!-- ================= Navbar ================= -->
 
     <header class="header">
 
@@ -69,14 +72,20 @@
                 <div class="nav-actions">
 
                     <a href="wishlist.html" class="icon-btn">
-                        ❤️
+
+                        <i class="fa-regular fa-heart"></i>
+
+                        <span class="cart-count" id="wishlistCount">
+                            0
+                        </span>
+
                     </a>
 
                     <a href="cart.html" class="icon-btn cart-btn">
 
-                        🛒
+                        <i class="fa-solid fa-cart-shopping"></i>
 
-                        <span class="cart-count">
+                        <span class="cart-count" id="cartCount">
                             0
                         </span>
 
@@ -90,40 +99,76 @@
 
     </header>
 
+    <!-- ================= Banner ================= -->
+
     <section class="page-banner">
 
         <div class="container">
 
             <h1>
-
                 Shop By Categories
-
             </h1>
 
             <p>
-
-                Explore thousands of premium products
-                from different categories.
-
+                Discover premium quality products from our most popular categories.
             </p>
 
         </div>
 
     </section>
 
+    <!-- ================= Categories ================= -->
+
     <section class="categories-page">
 
         <div class="container">
 
+            <div class="section-header">
+
+                <span class="section-tag">
+
+                    Categories
+
+                </span>
+
+                <h2>
+
+                    Browse All Categories
+
+                </h2>
+
+                <p>
+
+                    Find products from your favourite categories with premium quality and exciting offers.
+
+                </p>
+
+            </div>
+
+            <!-- Search -->
+
+            <div class="category-search">
+
+                <input
+                    type="text"
+                    id="searchCategory"
+                    placeholder="Search Categories...">
+
+            </div>
+
+            <!-- Dynamic Categories -->
+
             <div class="categories-grid">
 
-                <!-- JS will generate cards here -->
+                <!-- Categories.js will generate cards -->
 
             </div>
 
         </div>
 
     </section>
+
+    <!-- ================= Footer ================= -->
 
     <footer class="footer">
 
@@ -133,8 +178,7 @@
 
                 <p>
 
-                    © 2026 ShopEase.
-                    All Rights Reserved.
+                    © 2026 ShopEase. All Rights Reserved.
 
                 </p>
 
