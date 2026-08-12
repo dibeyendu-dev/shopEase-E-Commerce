@@ -210,3 +210,134 @@ data-id="${product.id}">
 }
 
 renderOffers();
+// ===============================
+// Add To Cart
+// ===============================
+
+function addToCart(){
+
+const id=Number(this.dataset.id);
+
+const product=offers.find(item=>item.id===id);
+
+const existingProduct=cart.find(item=>item.id===id);
+
+if(existingProduct){
+
+existingProduct.quantity++;
+
+}
+
+else{
+
+cart.push({
+
+id:product.id,
+name:product.name,
+category:product.category,
+price:product.price,
+oldPrice:product.oldPrice,
+discount:product.discount,
+rating:product.rating,
+image:product.image,
+quantity:1
+
+});
+
+}
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+updateCounts();
+
+alert("Product Added To Cart");
+
+}
+
+// ===============================
+// Wishlist
+// ===============================
+
+function toggleWishlist(){
+
+const id=Number(this.dataset.id);
+
+const index=wishlist.findIndex(item=>item.id===id);
+
+if(index===-1){
+
+const product=offers.find(item=>item.id===id);
+
+wishlist.push(product);
+
+this.innerHTML=`<i class="fa-solid fa-heart"></i>`;
+
+}
+
+else{
+
+wishlist.splice(index,1);
+
+this.innerHTML=`<i class="fa-regular fa-heart"></i>`;
+
+}
+
+localStorage.setItem("wishlist",JSON.stringify(wishlist));
+
+updateCounts();
+
+}
+
+// ===============================
+// Counter
+// ===============================
+
+function updateCounts(){
+
+const wishlistCount=document.getElementById("wishlistCount");
+
+const cartCount=document.getElementById("cartCount");
+
+if(wishlistCount){
+
+wishlistCount.textContent=wishlist.length;
+
+}
+
+if(cartCount){
+
+const total=cart.reduce((sum,item)=>sum+item.quantity,0);
+
+cartCount.textContent=total;
+
+}
+
+}
+
+// ===============================
+// Events
+// ===============================
+
+function loadEvents(){
+
+const cartButtons=document.querySelectorAll(".add-cart");
+
+const wishlistButtons=document.querySelectorAll(".wishlist-btn");
+
+cartButtons.forEach(button=>{
+
+button.addEventListener("click",addToCart);
+
+});
+
+wishlistButtons.forEach(button=>{
+
+button.addEventListener("click",toggleWishlist);
+
+});
+
+}
+
+loadEvents();
+
+updateCounts();
