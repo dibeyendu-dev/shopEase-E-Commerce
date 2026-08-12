@@ -148,3 +148,51 @@ Explore
 }
 
 renderCategories(filteredCategories);
+// ===========================
+// Search Categories
+// ===========================
+
+searchInput.addEventListener("input", function () {
+
+    const searchValue = this.value.toLowerCase().trim();
+
+    filteredCategories = categories.filter(category => {
+
+        return category.name.toLowerCase().includes(searchValue);
+
+    });
+
+    renderCategories(filteredCategories);
+
+});
+// ===========================
+// Wishlist & Cart Count
+// ===========================
+
+function updateCounts(){
+
+const wishlist=JSON.parse(localStorage.getItem("wishlist")) || [];
+
+const cart=JSON.parse(localStorage.getItem("cart")) || [];
+
+const wishlistCount=document.getElementById("wishlistCount");
+
+const cartCount=document.getElementById("cartCount");
+
+if(wishlistCount){
+
+wishlistCount.textContent=wishlist.length;
+
+}
+
+if(cartCount){
+
+const total=cart.reduce((sum,item)=>sum+item.quantity,0);
+
+cartCount.textContent=total;
+
+}
+
+}
+
+updateCounts();
