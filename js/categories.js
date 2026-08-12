@@ -70,3 +70,81 @@ const categoriesGrid = document.querySelector(".categories-grid");
 const searchInput = document.getElementById("searchCategory");
 
 let filteredCategories = [...categories];
+function renderCategories(categoriesArray){
+
+categoriesGrid.innerHTML="";
+
+if(categoriesArray.length===0){
+
+categoriesGrid.innerHTML=`
+
+<h2 class="no-category">
+
+No Categories Found
+
+</h2>
+
+`;
+
+return;
+
+}
+
+categoriesArray.forEach(category=>{
+
+categoriesGrid.innerHTML+=`
+
+<div class="category-card">
+
+<div class="category-image">
+
+<img src="${category.image}" alt="${category.name}">
+
+<span class="category-badge">
+
+${category.products}
+
+</span>
+
+<div class="category-icon">
+
+<i class="${category.icon}"></i>
+
+</div>
+
+</div>
+
+<div class="category-content">
+
+<h3>
+
+${category.name}
+
+</h3>
+
+<p>
+
+Explore premium quality
+${category.name} products.
+
+</p>
+
+<a href="products.html" class="category-btn">
+
+Explore
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+renderCategories(filteredCategories);
