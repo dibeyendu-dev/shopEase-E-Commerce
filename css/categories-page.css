@@ -286,3 +286,24 @@ transform:scale(1.12);
 .category-btn{
 transition:all .4s ease;
 }
+.categories-btn{
+margin-top:50px;
+text-align:center;
+}
+
+.categories-btn .btn{
+display:inline-block;
+padding:14px 35px;
+background:#2563eb;
+color:#fff;
+text-decoration:none;
+border-radius:50px;
+font-weight:600;
+transition:.3s ease;
+}
+
+.categories-btn .btn:hover{
+background:#1d4ed8;
+transform:translateY(-4px);
+box-shadow:0 15px 30px rgba(37,99,235,.25);
+}
