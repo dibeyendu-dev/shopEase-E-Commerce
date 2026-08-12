@@ -109,3 +109,104 @@ const offersGrid=document.querySelector(".offers-grid");
 let cart=JSON.parse(localStorage.getItem("cart")) || [];
 
 let wishlist=JSON.parse(localStorage.getItem("wishlist")) || [];
+// ===============================
+// Render Offer Products
+// ===============================
+
+function renderOffers(){
+
+if(!offersGrid){
+
+return;
+
+}
+
+offersGrid.innerHTML="";
+
+offers.forEach(product=>{
+
+offersGrid.innerHTML+=`
+
+<div class="offer-card">
+
+<div class="offer-image">
+
+<img src="${product.image}" alt="${product.name}">
+
+<span class="offer-discount">
+
+-${product.discount}%
+
+</span>
+
+</div>
+
+<div class="offer-info">
+
+<p class="product-category">
+
+${product.category}
+
+</p>
+
+<h3>
+
+${product.name}
+
+</h3>
+
+<div class="product-rating">
+
+⭐ ${product.rating}
+
+</div>
+
+<div class="offer-price">
+
+<span class="new-price">
+
+₹${product.price}
+
+</span>
+
+<span class="old-price">
+
+₹${product.oldPrice}
+
+</span>
+
+</div>
+
+<div class="offer-actions">
+
+<button class="offer-btn-card add-cart"
+
+data-id="${product.id}">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Add To Cart
+
+</button>
+
+<button class="wishlist-btn"
+
+data-id="${product.id}">
+
+<i class="fa-regular fa-heart"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+renderOffers();
