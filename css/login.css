@@ -63,3 +63,107 @@ transition:.3s;
 border-color:#2563eb;
 box-shadow:0 0 12px rgba(37,99,235,.15);
 }
+/* ==========================================
+            PASSWORD BOX
+========================================== */
+
+.password-box{
+position:relative;
+}
+
+.password-box input{
+padding-right:50px;
+}
+
+.password-box i{
+position:absolute;
+top:50%;
+right:18px;
+transform:translateY(-50%);
+font-size:18px;
+color:#64748b;
+cursor:pointer;
+transition:.3s;
+}
+
+.password-box i:hover{
+color:#2563eb;
+}
+
+/* ==========================================
+            LOGIN OPTIONS
+========================================== */
+
+.login-options{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+font-size:.9rem;
+}
+
+.login-options label{
+display:flex;
+align-items:center;
+gap:8px;
+color:#475569;
+cursor:pointer;
+}
+
+.login-options a{
+color:#2563eb;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.login-options a:hover{
+color:#1d4ed8;
+}
+
+/* ==========================================
+            LOGIN BUTTON
+========================================== */
+
+.login-btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#2563eb;
+color:#ffffff;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+transition:.35s;
+box-shadow:0 10px 25px rgba(37,99,235,.2);
+}
+
+.login-btn:hover{
+background:#1d4ed8;
+transform:translateY(-3px);
+box-shadow:0 18px 35px rgba(37,99,235,.3);
+}
+
+/* ==========================================
+            REGISTER LINK
+========================================== */
+
+.register-link{
+margin-top:25px;
+text-align:center;
+font-size:.95rem;
+color:#64748b;
+}
+
+.register-link a{
+color:#2563eb;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+}
+
+.register-link a:hover{
+color:#1d4ed8;
+text-decoration:underline;
+}
