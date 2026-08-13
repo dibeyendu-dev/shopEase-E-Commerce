@@ -224,3 +224,140 @@ transition:.3s;
 .menu-toggle:hover{
 transform:rotate(90deg);
 }
+/* ==========================================
+            STICKY ANIMATION
+========================================== */
+
+.header{
+animation:navbarFade .5s ease;
+}
+
+@keyframes navbarFade{
+
+0%{
+opacity:0;
+transform:translateY(-20px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ==========================================
+            SMOOTH TRANSITION
+========================================== */
+
+*{
+scroll-behavior:smooth;
+}
+
+.navbar,
+.logo,
+.nav-links a,
+.icon-btn,
+.login-nav-btn,
+.search-box input,
+.menu-toggle{
+transition:all .35s ease;
+}
+
+/* ==========================================
+            NAVBAR HOVER EFFECT
+========================================== */
+
+.nav-links li{
+position:relative;
+}
+
+.nav-links li:hover{
+transform:translateY(-2px);
+}
+
+/* ==========================================
+            SEARCH PLACEHOLDER
+========================================== */
+
+.search-box input::placeholder{
+color:#94a3b8;
+font-size:.9rem;
+}
+
+/* ==========================================
+            ICON ANIMATION
+========================================== */
+
+.icon-btn i,
+.login-nav-btn i{
+transition:.3s ease;
+}
+
+.icon-btn:hover i,
+.login-nav-btn:hover i{
+transform:scale(1.15);
+}
+
+/* ==========================================
+            ACTIVE BUTTON EFFECT
+========================================== */
+
+.icon-btn:active,
+.login-nav-btn:active{
+transform:scale(.95);
+}
+
+/* ==========================================
+            CUSTOM SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#f1f5f9;
+}
+
+::-webkit-scrollbar-thumb{
+background:#2563eb;
+border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+background:#1d4ed8;
+}
+
+/* ==========================================
+            SELECTION COLOR
+========================================== */
+
+::selection{
+background:#2563eb;
+color:#ffffff;
+}
+
+/* ==========================================
+            REMOVE OUTLINE
+========================================== */
+
+button,
+input,
+a{
+outline:none;
+}
+
+/* ==========================================
+            FINAL POLISH
+========================================== */
+
+.header::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:1px;
+background:rgba(255,255,255,.12);
+}
