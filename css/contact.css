@@ -94,4 +94,27 @@ margin:0;
 color:#64748b;
 line-height:1.7;
 }
+.contact-social{
+display:flex;
+gap:15px;
+margin-top:35px;
+}
 
+.contact-social a{
+width:48px;
+height:48px;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+background:#2563eb;
+color:#fff;
+font-size:18px;
+text-decoration:none;
+transition:.35s ease;
+}
+
+.contact-social a:hover{
+background:#1d4ed8;
+transform:translateY(-5px) scale(1.08);
+}
