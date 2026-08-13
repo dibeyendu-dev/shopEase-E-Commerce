@@ -18,3 +18,15 @@ font-size:1.1rem;
 line-height:1.8;
 opacity:.9;
 }
+.contact-section{
+padding:90px 0;
+background:#f8fafc;
+}
+
+.contact-wrapper{
+display:grid;
+grid-template-columns:1fr 1.2fr;
+gap:50px;
+align-items:start;
+}
+
