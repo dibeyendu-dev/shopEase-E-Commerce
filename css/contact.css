@@ -29,4 +29,22 @@ grid-template-columns:1fr 1.2fr;
 gap:50px;
 align-items:start;
 }
+.contact-info{
+background:#ffffff;
+padding:40px;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.contact-info h2{
+font-size:2rem;
+margin-bottom:20px;
+color:#111827;
+}
+
+.contact-info p{
+color:#64748b;
+line-height:1.8;
+margin-bottom:30px;
+}
 
