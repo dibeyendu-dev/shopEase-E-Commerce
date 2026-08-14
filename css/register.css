@@ -68,3 +68,80 @@ box-shadow:0 0 12px rgba(37,99,235,.15);
 .input-group input::placeholder{
 color:#94a3b8;
 }
+/* ==========================================
+            PASSWORD BOX
+========================================== */
+
+.password-box{
+position:relative;
+}
+
+.password-box input{
+padding-right:50px;
+}
+
+.password-box i{
+position:absolute;
+top:50%;
+right:18px;
+transform:translateY(-50%);
+font-size:18px;
+color:#64748b;
+cursor:pointer;
+transition:.3s;
+}
+
+.password-box i:hover{
+color:#2563eb;
+}
+
+/* ==========================================
+            REGISTER BUTTON
+========================================== */
+
+.register-btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#2563eb;
+color:#ffffff;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+transition:.35s;
+box-shadow:0 10px 25px rgba(37,99,235,.2);
+}
+
+.register-btn:hover{
+background:#1d4ed8;
+transform:translateY(-3px);
+box-shadow:0 18px 35px rgba(37,99,235,.3);
+}
+
+.register-btn:active{
+transform:scale(.98);
+}
+
+/* ==========================================
+            LOGIN LINK
+========================================== */
+
+.login-link{
+margin-top:25px;
+text-align:center;
+font-size:.95rem;
+color:#64748b;
+}
+
+.login-link a{
+color:#2563eb;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+}
+
+.login-link a:hover{
+color:#1d4ed8;
+text-decoration:underline;
+}
