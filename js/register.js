@@ -70,3 +70,88 @@ this.classList.add("fa-eye");
 }
 
 });
+// ==========================================
+// REGISTER FORM
+// ==========================================
+
+registerForm.addEventListener("submit",function(event){
+
+event.preventDefault();
+
+const userName=name.value.trim();
+
+const userEmail=email.value.trim();
+
+const userPassword=password.value.trim();
+
+const userConfirmPassword=confirmPassword.value.trim();
+
+if(userName==="" || userEmail==="" || userPassword==="" || userConfirmPassword===""){
+
+alert("Please fill all fields.");
+
+return;
+
+}
+
+const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if(!emailPattern.test(userEmail)){
+
+alert("Please enter a valid email.");
+
+return;
+
+}
+
+if(userPassword.length<6){
+
+alert("Password must be at least 6 characters.");
+
+return;
+
+}
+
+if(userPassword!==userConfirmPassword){
+
+alert("Passwords do not match.");
+
+return;
+
+}
+
+// Load Existing Users
+
+const users=JSON.parse(localStorage.getItem("users")) || [];
+
+// Check Duplicate Email
+
+const alreadyExists=users.some(user=>user.email===userEmail);
+
+if(alreadyExists){
+
+alert("Email already registered.");
+
+return;
+
+}
+
+// Save New User
+
+const newUser={
+
+name:userName,
+email:userEmail,
+password:userPassword
+
+};
+
+users.push(newUser);
+
+localStorage.setItem("users",JSON.stringify(users));
+
+alert("Registration Successful 🎉");
+
+window.location.href="login.html";
+
+});
