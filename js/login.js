@@ -40,15 +40,15 @@ this.classList.add("fa-eye");
 // LOGIN FORM
 // ==========================================
 
-loginForm.addEventListener("submit",function(event){
+loginForm.addEventListener("submit", function (event) {
 
 event.preventDefault();
 
-const userEmail=email.value.trim();
+const userEmail = email.value.trim();
 
-const userPassword=password.value.trim();
+const userPassword = password.value.trim();
 
-if(userEmail==="" || userPassword===""){
+if(userEmail === "" || userPassword === ""){
 
 alert("Please fill all fields.");
 
@@ -56,7 +56,7 @@ return;
 
 }
 
-const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 if(!emailPattern.test(userEmail)){
 
@@ -66,25 +66,33 @@ return;
 
 }
 
-if(userPassword.length<6){
+// Load Registered Users
 
-alert("Password must be at least 6 characters.");
+const users = JSON.parse(localStorage.getItem("users")) || [];
+
+// Check Email & Password
+
+const currentUser = users.find(user => {
+
+return user.email === userEmail &&
+user.password === userPassword;
+
+});
+
+if(!currentUser){
+
+alert("Invalid Email or Password");
 
 return;
 
 }
 
-const user={
+// Save Logged In User
 
-email:userEmail,
-password:userPassword
+localStorage.setItem("currentUser", JSON.stringify(currentUser));
 
-};
+alert(`Welcome ${currentUser.name} 🎉`);
 
-localStorage.setItem("currentUser",JSON.stringify(user));
-
-alert("Login Successful 🎉");
-
-window.location.href="index.html";
+window.location.href = "index.html";
 
 });
