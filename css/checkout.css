@@ -1,0 +1,61 @@
+/* ==========================================
+            CHECKOUT SECTION
+========================================== */
+
+.checkout-section{
+padding:100px 0;
+background:#f8fafc;
+min-height:100vh;
+}
+
+.checkout-wrapper{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:40px;
+align-items:start;
+}
+
+/* ==========================================
+            CHECKOUT FORM
+========================================== */
+
+.checkout-form{
+background:#ffffff;
+padding:40px;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.checkout-form h2{
+font-size:2rem;
+margin-bottom:30px;
+color:#111827;
+}
+
+.checkout-form form{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.checkout-form input,
+.checkout-form textarea{
+width:100%;
+padding:15px 18px;
+border:2px solid #e5e7eb;
+border-radius:12px;
+outline:none;
+font-size:16px;
+transition:.3s;
+}
+
+.checkout-form input:focus,
+.checkout-form textarea:focus{
+border-color:#2563eb;
+box-shadow:0 0 12px rgba(37,99,235,.15);
+}
+
+.checkout-form textarea{
+resize:none;
+min-height:140px;
+}
