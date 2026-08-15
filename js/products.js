@@ -1,114 +1,146 @@
+// ==========================================
+// ELEMENTS
+// ==========================================
+
+const productsGrid = document.getElementById("productsGrid");
 const searchInput = document.getElementById("searchInput");
 const sortSelect = document.getElementById("sortSelect");
 const filterButtons = document.querySelectorAll(".filter-btn");
-const productsGrid = document.getElementById("productsGrid");
+
 const cartCount = document.getElementById("cartCount");
 const wishlistCount = document.getElementById("wishlistCount");
 
+// ==========================================
+// PRODUCTS DATA
+// ==========================================
+
 const products = [
-    {
-        id: 1,
-        name: "Wireless Headphone",
-        category: "Electronics",
-        price: 2499,
-        rating: 4.8,
-        discount: 20,
-        image: "images/headphone.jpg"
-    },
-    {
-        id: 2,
-        name: "Smart Watch",
-        category: "Watches",
-        price: 3999,
-        rating: 4.7,
-        discount: 15,
-        image: "images/watch.jpg"
-    },
-    {
-        id: 3,
-        name: "Running Shoes",
-        category: "Shoes",
-        price: 2999,
-        rating: 4.6,
-        discount: 10,
-        image: "images/shoes.jpg"
-    },
-    {
-        id: 4,
-        name: "Men T-Shirt",
-        category: "Fashion",
-        price: 899,
-        rating: 4.4,
-        discount: 30,
-        image: "images/tshirt.jpg"
-    },
-    {
-        id: 5,
-        name: "Bluetooth Speaker",
-        category: "Electronics",
-        price: 1899,
-        rating: 4.5,
-        discount: 25,
-        image: "images/speaker.jpg"
-    },
-    {
-        id: 6,
-        name: "Leather Wallet",
-        category: "Fashion",
-        price: 799,
-        rating: 4.3,
-        discount: 12,
-        image: "images/wallet.jpg"
-    },
-    {
-        id: 7,
-        name: "Sports Shoes",
-        category: "Shoes",
-        price: 3499,
-        rating: 4.9,
-        discount: 18,
-        image: "images/sportshoe.jpg"
-    },
-    {
-        id: 8,
-        name: "Luxury Watch",
-        category: "Watches",
-        price: 5999,
-        rating: 4.9,
-        discount: 22,
-        image: "images/luxurywatch.jpg"
-    }
+
+{
+id:1,
+name:"Wireless Headphone",
+category:"Electronics",
+price:2499,
+oldPrice:3199,
+rating:4.8,
+discount:20,
+image:"images/products/headphone.png"
+},
+
+{
+id:2,
+name:"Smart Watch",
+category:"Watches",
+price:3999,
+oldPrice:4999,
+rating:4.7,
+discount:15,
+image:"images/products/watch.png"
+},
+
+{
+id:3,
+name:"Running Shoes",
+category:"Shoes",
+price:2999,
+oldPrice:3799,
+rating:4.6,
+discount:10,
+image:"images/products/shoes.png"
+},
+
+{
+id:4,
+name:"Men T-Shirt",
+category:"Fashion",
+price:899,
+oldPrice:1199,
+rating:4.4,
+discount:30,
+image:"images/products/tshirt.png"
+},
+
+{
+id:5,
+name:"Bluetooth Speaker",
+category:"Electronics",
+price:1899,
+oldPrice:2499,
+rating:4.5,
+discount:25,
+image:"images/products/speaker.png"
+},
+
+{
+id:6,
+name:"Leather Wallet",
+category:"Fashion",
+price:799,
+oldPrice:999,
+rating:4.3,
+discount:12,
+image:"images/products/wallet.png"
+},
+
+{
+id:7,
+name:"Sports Shoes",
+category:"Shoes",
+price:3499,
+oldPrice:4299,
+rating:4.9,
+discount:18,
+image:"images/products/sportshoe.png"
+},
+
+{
+id:8,
+name:"Luxury Watch",
+category:"Watches",
+price:5999,
+oldPrice:6999,
+rating:4.9,
+discount:22,
+image:"images/products/luxurywatch.png"
+}
+
 ];
 
-let filteredProducts = [...products];
-let wishlist = [];
-let cart = [];
+// ==========================================
+// VARIABLES
+// ==========================================
 
-function renderProducts(productsArray) {
+let filteredProducts=[...products];
 
-    productsGrid.innerHTML = "";
+let wishlist=JSON.parse(localStorage.getItem("wishlist")) || [];
 
-    if (productsArray.length === 0) {
+let cart=JSON.parse(localStorage.getItem("cart")) || [];
 
-        productsGrid.innerHTML = `
+// ==========================================
+// RENDER PRODUCTS
+// ==========================================
+
+function renderProducts(productArray){
+
+productsGrid.innerHTML="";
+
+if(productArray.length===0){
+
+productsGrid.innerHTML=`
 <h2 class="no-products">
 No Products Found
 </h2>
 `;
 
-        return;
+return;
 
-    }
+}
 
-    productsArray.forEach(product => {
+productArray.forEach(product=>{
 
-        productsGrid.innerHTML += `
+productsGrid.innerHTML+=`
 
 <div class="product-card">
-
-<div class="product-image">
-
-<img src="${product.image}" alt="${product.name}">
 
 <span class="discount-badge">
 -${product.discount}%
@@ -118,27 +150,45 @@ No Products Found
 <i class="fa-regular fa-heart"></i>
 </button>
 
+<div class="product-image">
+
+<img src="${product.image}" alt="${product.name}">
+
 </div>
 
 <div class="product-content">
 
-<h3>${product.name}</h3>
+<span class="product-category">
+${product.category}
+</span>
 
-<p>${product.category}</p>
+<h3>
+${product.name}
+</h3>
 
-<div class="rating">
+<div class="product-rating">
 
-<i class="fa-solid fa-star"></i>
+⭐⭐⭐⭐⭐
 
-<span>${product.rating}</span>
+<span>
+(${product.rating})
+</span>
 
 </div>
 
-<h4>
-₹${product.price}
-</h4>
+<div class="product-price">
 
-<button class="cart-btn" data-id="${product.id}">
+<span class="new-price">
+₹${product.price}
+</span>
+
+<span class="old-price">
+₹${product.oldPrice}
+</span>
+
+</div>
+
+<button class="add-to-cart" data-id="${product.id}">
 Add To Cart
 </button>
 
@@ -148,11 +198,13 @@ Add To Cart
 
 `;
 
-    });
-    wishlistEvents();
+});
 
-    updateWishlistUI();
 }
+// ==========================================
+// SEARCH + FILTER + SORT
+// ==========================================
+
 let currentCategory = "All Products";
 let currentSearch = "";
 let currentSort = "default";
@@ -161,12 +213,16 @@ function updateProducts() {
 
     let updatedProducts = [...products];
 
+    // Category Filter
     if (currentCategory !== "All Products") {
 
-        updatedProducts = updatedProducts.filter(product => product.category === currentCategory);
+        updatedProducts = updatedProducts.filter(product =>
+            product.category === currentCategory
+        );
 
     }
 
+    // Search
     if (currentSearch !== "") {
 
         updatedProducts = updatedProducts.filter(product =>
@@ -175,6 +231,7 @@ function updateProducts() {
 
     }
 
+    // Sorting
     switch (currentSort) {
 
         case "low":
@@ -197,7 +254,7 @@ function updateProducts() {
 
         default:
 
-            updatedProducts = [...updatedProducts];
+            break;
 
     }
 
@@ -205,7 +262,15 @@ function updateProducts() {
 
     renderProducts(filteredProducts);
 
+    updateWishlistUI();
+
+    cartEvents();
+
 }
+
+// ==========================================
+// FILTER BUTTONS
+// ==========================================
 
 filterButtons.forEach(button => {
 
@@ -227,6 +292,10 @@ filterButtons.forEach(button => {
 
 });
 
+// ==========================================
+// SEARCH
+// ==========================================
+
 searchInput.addEventListener("input", function () {
 
     currentSearch = this.value.toLowerCase().trim();
@@ -235,6 +304,10 @@ searchInput.addEventListener("input", function () {
 
 });
 
+// ==========================================
+// SORT
+// ==========================================
+
 sortSelect.addEventListener("change", function () {
 
     currentSort = this.value;
@@ -242,24 +315,13 @@ sortSelect.addEventListener("change", function () {
     updateProducts();
 
 });
-loadWishlist();
+// ==========================================
+// WISHLIST
+// ==========================================
 
-renderProducts(filteredProducts);
 function saveWishlist() {
 
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
-}
-
-function loadWishlist() {
-
-    const savedWishlist = localStorage.getItem("wishlist");
-
-    if (savedWishlist) {
-
-        wishlist = JSON.parse(savedWishlist);
-
-    }
 
 }
 
@@ -275,9 +337,7 @@ function updateWishlistCount() {
 
 function updateWishlistUI() {
 
-    const wishlistButtons = document.querySelectorAll(".wishlist-btn");
-
-    wishlistButtons.forEach(button => {
+    document.querySelectorAll(".wishlist-btn").forEach(button => {
 
         const id = Number(button.dataset.id);
 
@@ -319,11 +379,15 @@ function toggleWishlist() {
 
         wishlist.push(product);
 
+        showToast("Added To Wishlist");
+
     }
 
     else {
 
         wishlist.splice(index, 1);
+
+        showToast("Removed From Wishlist");
 
     }
 
@@ -335,191 +399,133 @@ function toggleWishlist() {
 
 function wishlistEvents() {
 
-    const wishlistButtons = document.querySelectorAll(".wishlist-btn");
+    document.querySelectorAll(".wishlist-btn").forEach(button => {
 
-    wishlistButtons.forEach(button => {
-
-        button.addEventListener("click", toggleWishlist);
+        button.onclick = toggleWishlist;
 
     });
 
 }
-function saveCart(){
 
-localStorage.setItem("cart",JSON.stringify(cart));
+// ==========================================
+// CART
+// ==========================================
 
-}
+function saveCart() {
 
-function loadCart(){
-
-const savedCart=localStorage.getItem("cart");
-
-if(savedCart){
-
-cart=JSON.parse(savedCart);
+    localStorage.setItem("cart", JSON.stringify(cart));
 
 }
 
-}
+function updateCartCount() {
 
-function updateCartCount(){
+    if (cartCount) {
 
-if(cartCount){
+        const total = cart.reduce((sum, item) => {
 
-const totalItems=cart.reduce((total,item)=>{
+            return sum + item.quantity;
 
-return total+item.quantity;
+        }, 0);
 
-},0);
+        cartCount.textContent = total;
 
-cartCount.textContent=totalItems;
-
-}
+    }
 
 }
 
-function addToCart(){
+function addToCart() {
 
-const id=Number(this.dataset.id);
+    const id = Number(this.dataset.id);
 
-const existingProduct=cart.find(item=>item.id===id);
+    const existing = cart.find(item => item.id === id);
 
-if(existingProduct){
+    if (existing) {
 
-existingProduct.quantity++;
+        existing.quantity++;
 
-}
+    }
 
-else{
+    else {
 
-const product=products.find(item=>item.id===id);
+        const product = products.find(item => item.id === id);
 
-cart.push({
+        cart.push({
 
-id:product.id,
+            ...product,
 
-name:product.name,
+            quantity: 1
 
-category:product.category,
+        });
 
-price:product.price,
+    }
 
-rating:product.rating,
+    saveCart();
 
-discount:product.discount,
+    updateCartCount();
 
-image:product.image,
-
-quantity:1
-
-});
+    showToast("Product Added To Cart");
 
 }
 
-saveCart();
+function cartEvents() {
 
-updateCartCount();
+    document.querySelectorAll(".add-to-cart").forEach(button => {
 
-}
+        button.onclick = addToCart;
 
-function cartEvents(){
-
-const cartButtons=document.querySelectorAll(".cart-btn");
-
-cartButtons.forEach(button=>{
-
-button.addEventListener("click",addToCart);
-
-});
+    });
 
 }
-loadCart();
+// ==========================================
+// TOAST MESSAGE
+// ==========================================
 
-cartEvents();
-
-updateCartCount();
-
-renderProducts(filteredProducts);
 function showToast(message){
 
-let toast=document.querySelector(".toast");
+    let toast = document.querySelector(".toast");
 
-if(!toast){
+    if(!toast){
 
-toast=document.createElement("div");
+        toast = document.createElement("div");
 
-toast.className="toast";
+        toast.className = "toast";
 
-document.body.appendChild(toast);
+        document.body.appendChild(toast);
+
+    }
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },2000);
 
 }
 
-toast.textContent=message;
-
-toast.classList.add("show");
-
-setTimeout(()=>{
-
-toast.classList.remove("show");
-
-},2000);
-
-}
+// ==========================================
+// INITIALIZE
+// ==========================================
 
 function initializeProducts(){
 
-loadWishlist();
+    renderProducts(filteredProducts);
 
-loadCart();
+    wishlistEvents();
 
-renderProducts(filteredProducts);
+    cartEvents();
 
-updateWishlistCount();
+    updateWishlistUI();
 
-updateWishlistUI();
-
-updateCartCount();
-
-cartEvents();
+    updateCartCount();
 
 }
 
-document.addEventListener("click",function(event){
-
-const cartButton=event.target.closest(".cart-btn");
-
-if(cartButton){
-
-addToCart.call(cartButton);
-
-showToast("Product Added To Cart");
-
-}
-
-const wishlistButton=event.target.closest(".wishlist-btn");
-
-if(wishlistButton){
-
-toggleWishlist.call(wishlistButton);
-
-const id=Number(wishlistButton.dataset.id);
-
-const exists=wishlist.some(item=>item.id===id);
-
-if(exists){
-
-showToast("Added To Wishlist");
-
-}
-
-else{
-
-showToast("Removed From Wishlist");
-
-}
-
-}
-
-});
+// ==========================================
+// START APP
+// ==========================================
 
 initializeProducts();

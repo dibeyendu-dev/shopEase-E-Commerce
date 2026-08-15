@@ -1,98 +1,125 @@
+// ==========================================
+// ELEMENTS
+// ==========================================
+
+const categoriesGrid = document.getElementById("categoriesGrid");
+const searchInput = document.getElementById("searchCategory");
+const cartCount = document.getElementById("cartCount");
+const wishlistCount = document.getElementById("wishlistCount");
+
+// ==========================================
+// CATEGORY DATA
+// ==========================================
+
 const categories = [
 
-{
-id:1,
-name:"Electronics",
-products:"120+ Products",
-image:"images/categories/electronics.jpg",
-icon:"fa-solid fa-laptop"
-},
+    {
+        id: 1,
+        name: "Electronics",
+        products: 120,
+        image: "images/categories/electronics.jpg",
+        badge: "Popular"
+    },
 
-{
-id:2,
-name:"Fashion",
-products:"180+ Products",
-image:"images/categories/fashion.jpg",
-icon:"fa-solid fa-shirt"
-},
+    {
+        id: 2,
+        name: "Fashion",
+        products: 180,
+        image: "images/categories/fashion.jpg",
+        badge: "Trending"
+    },
 
-{
-id:3,
-name:"Beauty",
-products:"90+ Products",
-image:"images/categories/beauty.jpg",
-icon:"fa-solid fa-spa"
-},
+    {
+        id: 3,
+        name: "Beauty",
+        products: 90,
+        image: "images/categories/beauty.jpg",
+        badge: "New"
+    },
 
-{
-id:4,
-name:"Furniture",
-products:"70+ Products",
-image:"images/categories/furniture.jpg",
-icon:"fa-solid fa-couch"
-},
+    {
+        id: 4,
+        name: "Furniture",
+        products: 70,
+        image: "images/categories/furniture.jpg",
+        badge: "Best"
+    },
 
-{
-id:5,
-name:"Watches",
-products:"110+ Products",
-image:"images/categories/watches.jpg",
-icon:"fa-solid fa-clock"
-},
+    {
+        id: 5,
+        name: "Watches",
+        products: 110,
+        image: "images/categories/watches.jpg",
+        badge: "Luxury"
+    },
 
-{
-id:6,
-name:"Sports",
-products:"95+ Products",
-image:"images/categories/sports.jpg",
-icon:"fa-solid fa-football"
-},
+    {
+        id: 6,
+        name: "Sports",
+        products: 95,
+        image: "images/categories/sports.jpg",
+        badge: "Top"
+    },
 
-{
-id:7,
-name:"Shoes",
-products:"150+ Products",
-image:"images/categories/shoes.jpg",
-icon:"fa-solid fa-shoe-prints"
-},
+    {
+        id: 7,
+        name: "Shoes",
+        products: 140,
+        image: "images/categories/shoes.jpg",
+        badge: "Popular"
+    },
 
-{
-id:8,
-name:"Accessories",
-products:"80+ Products",
-image:"images/categories/accessories.jpg",
-icon:"fa-solid fa-gem"
-}
+    {
+        id: 8,
+        name: "Bags",
+        products: 65,
+        image: "images/categories/bags.jpg",
+        badge: "Hot"
+    },
+
+    {
+        id: 9,
+        name: "Gaming",
+        products: 55,
+        image: "images/categories/gaming.jpg",
+        badge: "Latest"
+    }
 
 ];
 
-const categoriesGrid = document.querySelector(".categories-grid");
-const searchInput = document.getElementById("searchCategory");
+// ==========================================
+// VARIABLES
+// ==========================================
 
 let filteredCategories = [...categories];
-function renderCategories(categoriesArray){
 
-categoriesGrid.innerHTML="";
+// ==========================================
+// RENDER
+// ==========================================
 
-if(categoriesArray.length===0){
+function renderCategories(categoryArray) {
 
-categoriesGrid.innerHTML=`
+    categoriesGrid.innerHTML = "";
+
+    if (categoryArray.length === 0) {
+
+        categoriesGrid.innerHTML = `
 
 <h2 class="no-category">
 
-No Categories Found
+No Category Found
 
 </h2>
 
 `;
 
-return;
+        return;
 
-}
+    }
 
-categoriesArray.forEach(category=>{
+    categoryArray.forEach(category => {
 
-categoriesGrid.innerHTML+=`
+        categoriesGrid.innerHTML += `
 
 <div class="category-card">
 
@@ -102,15 +129,9 @@ categoriesGrid.innerHTML+=`
 
 <span class="category-badge">
 
-${category.products}
+${category.badge}
 
 </span>
-
-<div class="category-icon">
-
-<i class="${category.icon}"></i>
-
-</div>
 
 </div>
 
@@ -124,12 +145,14 @@ ${category.name}
 
 <p>
 
-Explore premium quality
-${category.name} products.
+${category.products}+ Products
 
 </p>
 
-<a href="products.html" class="category-btn">
+<a
+href="products.html?category=${encodeURIComponent(category.name)}"
+class="category-btn"
+>
 
 Explore
 
@@ -143,56 +166,140 @@ Explore
 
 `;
 
-});
+    });
 
 }
-
-renderCategories(filteredCategories);
-// ===========================
-// Search Categories
-// ===========================
+// ==========================================
+// LIVE SEARCH
+// ==========================================
 
 searchInput.addEventListener("input", function () {
 
-    const searchValue = this.value.toLowerCase().trim();
+    const value = this.value.toLowerCase().trim();
 
-    filteredCategories = categories.filter(category => {
+    filteredCategories = categories.filter(category =>
 
-        return category.name.toLowerCase().includes(searchValue);
+        category.name.toLowerCase().includes(value)
 
-    });
+    );
 
     renderCategories(filteredCategories);
 
 });
-// ===========================
-// Wishlist & Cart Count
-// ===========================
 
-function updateCounts(){
+// ==========================================
+// CART COUNT
+// ==========================================
 
-const wishlist=JSON.parse(localStorage.getItem("wishlist")) || [];
+function updateCartCount() {
 
-const cart=JSON.parse(localStorage.getItem("cart")) || [];
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-const wishlistCount=document.getElementById("wishlistCount");
+    const totalItems = cart.reduce((total, item) => {
 
-const cartCount=document.getElementById("cartCount");
+        return total + item.quantity;
 
-if(wishlistCount){
+    }, 0);
 
-wishlistCount.textContent=wishlist.length;
+    if (cartCount) {
 
-}
+        cartCount.textContent = totalItems;
 
-if(cartCount){
-
-const total=cart.reduce((sum,item)=>sum+item.quantity,0);
-
-cartCount.textContent=total;
+    }
 
 }
 
+// ==========================================
+// WISHLIST COUNT
+// ==========================================
+
+function updateWishlistCount() {
+
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    if (wishlistCount) {
+
+        wishlistCount.textContent = wishlist.length;
+
+    }
+
 }
 
-updateCounts();
+// ==========================================
+// SHOW TOAST
+// ==========================================
+
+function showToast(message) {
+
+    let toast = document.querySelector(".toast");
+
+    if (!toast) {
+
+        toast = document.createElement("div");
+
+        toast.className = "toast";
+
+        document.body.appendChild(toast);
+
+    }
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    }, 2000);
+
+}
+// ==========================================
+// INITIALIZE
+// ==========================================
+
+function initializeCategories() {
+
+    renderCategories(filteredCategories);
+
+    updateCartCount();
+
+    updateWishlistCount();
+
+}
+
+// ==========================================
+// PAGE LOAD
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    initializeCategories();
+
+});
+
+// ==========================================
+// UPDATE COUNTS WHEN STORAGE CHANGES
+// ==========================================
+
+window.addEventListener("storage", () => {
+
+    updateCartCount();
+
+    updateWishlistCount();
+
+});
+
+// ==========================================
+// EXPLORE BUTTON CLICK EFFECT
+// ==========================================
+
+document.addEventListener("click", function (event) {
+
+    const button = event.target.closest(".category-btn");
+
+    if (!button) return;
+
+    showToast("Opening Products...");
+
+});

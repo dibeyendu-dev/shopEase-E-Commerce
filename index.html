@@ -281,6 +281,8 @@
             </div>
         </div>
     </section>
+    <!-- ================= CATEGORIES ================= -->
+
     <section class="categories">
 
         <div class="container">
@@ -305,7 +307,9 @@
 
                 <a href="categories.html" class="category-card">
 
-                    <img src="images/categories/electronics.jpg" alt="Electronics">
+                    <div class="category-image">
+                        <img src="images/categories/electronics.jpg" alt="Electronics">
+                    </div>
 
                     <div class="category-content">
 
@@ -319,7 +323,9 @@
 
                 <a href="categories.html" class="category-card">
 
-                    <img src="images/categories/fashion.jpg" alt="Fashion">
+                    <div class="category-image">
+                        <img src="images/categories/fashion.jpg" alt="Fashion">
+                    </div>
 
                     <div class="category-content">
 
@@ -333,7 +339,9 @@
 
                 <a href="categories.html" class="category-card">
 
-                    <img src="images/categories/beauty.jpg" alt="Beauty">
+                    <div class="category-image">
+                        <img src="images/categories/beauty.jpg" alt="Beauty">
+                    </div>
 
                     <div class="category-content">
 
@@ -347,7 +355,9 @@
 
                 <a href="categories.html" class="category-card">
 
-                    <img src="images/categories/furniture.jpg" alt="Furniture">
+                    <div class="category-image">
+                        <img src="images/categories/furniture.jpg" alt="Furniture">
+                    </div>
 
                     <div class="category-content">
 
@@ -361,7 +371,9 @@
 
                 <a href="categories.html" class="category-card">
 
-                    <img src="images/categories/watches.jpg" alt="Watches">
+                    <div class="category-image">
+                        <img src="images/categories/watches.jpg" alt="Watches">
+                    </div>
 
                     <div class="category-content">
 
@@ -375,7 +387,9 @@
 
                 <a href="categories.html" class="category-card">
 
-                    <img src="images/categories/sports.jpg" alt="Sports">
+                    <div class="category-image">
+                        <img src="images/categories/sports.jpg" alt="Sports">
+                    </div>
 
                     <div class="category-content">
 
@@ -391,7 +405,7 @@
 
             <div class="categories-btn">
 
-                <a href="categories.html" class="btn btn-primary">
+                <a href="categories.html" class="btn">
 
                     View All Categories
 
@@ -402,99 +416,264 @@
         </div>
 
     </section>
-    <!-- ================= PRODUCTS CARD ================ -->
+    <!-- ================= PRODUCTS ================= -->
+
     <section class="products">
+
         <div class="container">
+
             <div class="section-header">
-                <span class="section-tag">Featured Products</span>
-                <h2>Best Selling Products</h2>
-                <p>Discover our most popular products loved by thousands of customers.</p>
+
+                <span class="section-tag">
+                    Featured Products
+                </span>
+
+                <h2>
+                    Best Selling Products
+                </h2>
+
+                <p>
+                    Discover our most popular products loved by thousands of customers.
+                </p>
+
             </div>
+
             <div class="products-grid">
-                <div class="product-card">
-                    <span class="discount-badge">-25%</span>
-                    <button class="wishlist-btn">❤</button>
+
+                <!-- Product 1 -->
+
+                <div class="product-card" data-id="1" data-name="Wireless Headphone" data-category="Electronics"
+                    data-price="2999" data-image="images/products/headphone.png">
+
+                    <span class="discount-badge">
+                        -25%
+                    </span>
+
+                    <button class="wishlist-btn">
+                        ❤
+                    </button>
+
                     <div class="product-image">
+
                         <img src="images/products/headphone.png" alt="Wireless Headphone">
+
                     </div>
+
                     <div class="product-content">
-                        <span class="product-category">Electronics</span>
-                        <h3>Wireless Headphone</h3>
+
+                        <span class="product-category">
+                            Electronics
+                        </span>
+
+                        <h3>
+                            Wireless Headphone
+                        </h3>
+
                         <div class="product-rating">
+
                             ⭐⭐⭐⭐⭐
+
                             <span>(125)</span>
+
                         </div>
+
                         <div class="product-price">
-                            <span class="new-price">₹2,999</span>
-                            <span class="old-price">₹3,999</span>
+
+                            <span class="new-price">
+                                ₹2,999
+                            </span>
+
+                            <span class="old-price">
+                                ₹3,999
+                            </span>
+
                         </div>
-                        <button class="cart-btn">Add to Cart</button>
+
+                        <button class="add-to-cart">
+                            Add To Cart
+                        </button>
+
                     </div>
+
                 </div>
-                <div class="product-card">
-                    <span class="discount-badge">-15%</span>
-                    <button class="wishlist-btn">❤</button>
+
+                <!-- Product 2 -->
+
+                <div class="product-card" data-id="2" data-name="Running Shoes" data-category="Sports" data-price="1699"
+                    data-image="images/products/shoes.png">
+
+                    <span class="discount-badge">
+                        -15%
+                    </span>
+
+                    <button class="wishlist-btn">
+                        ❤
+                    </button>
+
                     <div class="product-image">
+
                         <img src="images/products/shoes.png" alt="Running Shoes">
+
                     </div>
+
                     <div class="product-content">
-                        <span class="product-category">Sports</span>
-                        <h3>Running Shoes</h3>
+
+                        <span class="product-category">
+                            Sports
+                        </span>
+
+                        <h3>
+                            Running Shoes
+                        </h3>
+
                         <div class="product-rating">
+
                             ⭐⭐⭐⭐⭐
+
                             <span>(98)</span>
+
                         </div>
+
                         <div class="product-price">
-                            <span class="new-price">₹1,699</span>
-                            <span class="old-price">₹1,999</span>
+
+                            <span class="new-price">
+                                ₹1,699
+                            </span>
+
+                            <span class="old-price">
+                                ₹1,999
+                            </span>
+
                         </div>
-                        <button class="cart-btn">Add to Cart</button>
+
+                        <button class="add-to-cart">
+                            Add To Cart
+                        </button>
+
                     </div>
+
                 </div>
-                <div class="product-card">
-                    <span class="discount-badge">-30%</span>
-                    <button class="wishlist-btn">❤</button>
+                <!-- Product 3 -->
+
+                <div class="product-card" data-id="3" data-name="Smart Watch" data-category="Accessories"
+                    data-price="4499" data-image="images/products/watch.png">
+
+                    <span class="discount-badge">
+                        -30%
+                    </span>
+
+                    <button class="wishlist-btn">
+                        ❤
+                    </button>
+
                     <div class="product-image">
+
                         <img src="images/products/watch.png" alt="Smart Watch">
+
                     </div>
+
                     <div class="product-content">
-                        <span class="product-category">Accessories</span>
-                        <h3>Smart Watch</h3>
+
+                        <span class="product-category">
+                            Accessories
+                        </span>
+
+                        <h3>
+                            Smart Watch
+                        </h3>
+
                         <div class="product-rating">
+
                             ⭐⭐⭐⭐⭐
+
                             <span>(210)</span>
+
                         </div>
+
                         <div class="product-price">
-                            <span class="new-price">₹4,499</span>
-                            <span class="old-price">₹5,999</span>
+
+                            <span class="new-price">
+                                ₹4,499
+                            </span>
+
+                            <span class="old-price">
+                                ₹5,999
+                            </span>
+
                         </div>
-                        <button class="cart-btn">Add to Cart</button>
+
+                        <button class="add-to-cart">
+                            Add To Cart
+                        </button>
+
                     </div>
+
                 </div>
-                <div class="product-card">
-                    <span class="discount-badge">-20%</span>
-                    <button class="wishlist-btn">❤</button>
+
+                <!-- Product 4 -->
+
+                <div class="product-card" data-id="4" data-name="Travel Backpack" data-category="Travel"
+                    data-price="1499" data-image="images/products/backpack.png">
+
+                    <span class="discount-badge">
+                        -20%
+                    </span>
+
+                    <button class="wishlist-btn">
+                        ❤
+                    </button>
+
                     <div class="product-image">
+
                         <img src="images/products/backpack.png" alt="Travel Backpack">
+
                     </div>
+
                     <div class="product-content">
-                        <span class="product-category">Travel</span>
-                        <h3>Travel Backpack</h3>
+
+                        <span class="product-category">
+                            Travel
+                        </span>
+
+                        <h3>
+                            Travel Backpack
+                        </h3>
+
                         <div class="product-rating">
+
                             ⭐⭐⭐⭐⭐
+
                             <span>(87)</span>
+
                         </div>
+
                         <div class="product-price">
-                            <span class="new-price">₹1,499</span>
-                            <span class="old-price">₹1,899</span>
+
+                            <span class="new-price">
+                                ₹1,499
+                            </span>
+
+                            <span class="old-price">
+                                ₹1,899
+                            </span>
+
                         </div>
-                        <button class="cart-btn">Add to Cart</button>
+
+                        <button class="add-to-cart">
+                            Add To Cart
+                        </button>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
     <!-- =========================== Offer Banner =========================== -->
+
 
     <section class="offer">
         <div class="container">

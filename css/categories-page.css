@@ -1,423 +1,564 @@
-/* ===========================
-   Categories Page
-=========================== */
+/* ==========================================
+            PAGE BANNER
+========================================== */
 
-.categories-page{
-padding:80px 0;
-background:#f8fafc;
-min-height:100vh;
+.page-banner {
+   padding: 100px 0;
+   background: linear-gradient(135deg, #2563eb, #1d4ed8, #06b6d4);
+   text-align: center;
+   color: #fff;
 }
 
-/* ===========================
-   Page Banner
-=========================== */
-
-.page-banner{
-padding:100px 0;
-background:linear-gradient(135deg,#2563eb,#1d4ed8);
-text-align:center;
-color:#fff;
+.page-banner h1 {
+   font-size: 3.2rem;
+   font-weight: 700;
+   margin-bottom: 18px;
 }
 
-.page-banner h1{
-font-size:3rem;
-font-weight:700;
-margin-bottom:15px;
+.page-banner p {
+   max-width: 700px;
+   margin: auto;
+   font-size: 1.05rem;
+   line-height: 1.8;
+   opacity: .9;
 }
 
-.page-banner p{
-max-width:700px;
-margin:auto;
-font-size:1.1rem;
-line-height:1.8;
-opacity:.9;
+/* ==========================================
+            BREADCRUMB
+========================================== */
+
+.breadcrumb {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   margin-top: 25px;
+   font-size: 15px;
 }
 
-/* ===========================
-   Section Header
-=========================== */
-
-.section-header{
-text-align:center;
-margin-bottom:50px;
+.breadcrumb a {
+   color: #fff;
+   transition: .3s;
 }
 
-.section-tag{
-display:inline-block;
-padding:8px 20px;
-background:#dbeafe;
-color:#2563eb;
-border-radius:50px;
-font-size:.9rem;
-font-weight:600;
-margin-bottom:18px;
+.breadcrumb a:hover {
+   color: #facc15;
 }
 
-.section-header h2{
-font-size:2.5rem;
-margin-bottom:15px;
-color:#111827;
+/* ==========================================
+            PAGE
+========================================== */
+
+.categories-page {
+   padding: 90px 0;
+   background: #f8fafc;
 }
 
-.section-header p{
-max-width:650px;
-margin:auto;
-line-height:1.8;
-color:#64748b;
+/* ==========================================
+            SEARCH BOX
+========================================== */
+
+.category-search {
+   max-width: 520px;
+   margin: 0 auto 60px;
 }
 
-/* ===========================
-   Search Box
-=========================== */
-
-.category-search{
-max-width:500px;
-margin:0 auto 60px;
+.category-search input {
+   width: 100%;
+   height: 58px;
+   padding: 0 22px;
+   border: 2px solid #e5e7eb;
+   border-radius: 50px;
+   background: #fff;
+   outline: none;
+   font-size: 16px;
+   transition: .3s;
 }
 
-.category-search input{
-width:100%;
-padding:15px 20px;
-border:2px solid #e5e7eb;
-border-radius:50px;
-font-size:16px;
-outline:none;
-transition:.3s;
+.category-search input:focus {
+   border-color: #2563eb;
+   box-shadow: 0 0 15px rgba(37, 99, 235, .18);
 }
 
-.category-search input:focus{
-border-color:#2563eb;
-box-shadow:0 0 15px rgba(37,99,235,.15);
-}
+/* ==========================================
+            GRID
+========================================== */
 
-/* ===========================
-   Categories Grid
-=========================== */
+.categories-grid {
 
-.categories-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-}
-/* ===========================
-   Category Card
-=========================== */
+   display: grid;
 
-.category-card{
-position:relative;
-background:#ffffff;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-transition:.4s ease;
-cursor:pointer;
-}
+   grid-template-columns: repeat(3, 1fr);
 
-.category-card:hover{
-transform:translateY(-10px);
-box-shadow:0 25px 50px rgba(37,99,235,.18);
-}
+   gap: 30px;
 
-/* ===========================
-   Category Image
-=========================== */
-
-.category-image{
-position:relative;
-height:230px;
-overflow:hidden;
-}
-
-.category-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:.5s ease;
-display:block;
-}
-
-.category-card:hover .category-image img{
-transform:scale(1.1);
-}
-
-/* ===========================
-   Category Badge
-=========================== */
-
-.category-badge{
-position:absolute;
-top:18px;
-left:18px;
-padding:8px 16px;
-background:#2563eb;
-color:#ffffff;
-font-size:.8rem;
-font-weight:600;
-border-radius:50px;
-box-shadow:0 10px 25px rgba(37,99,235,.3);
-}
-
-/* ===========================
-   Category Icon
-=========================== */
-
-.category-icon{
-position:absolute;
-top:18px;
-right:18px;
-width:48px;
-height:48px;
-background:rgba(255,255,255,.9);
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:22px;
-color:#2563eb;
-transition:.4s;
-}
-
-.category-card:hover .category-icon{
-background:#2563eb;
-color:#ffffff;
-transform:rotate(10deg) scale(1.1);
-}
-
-/* ===========================
-   Category Content
-=========================== */
-
-.category-content{
-padding:25px;
-text-align:center;
-}
-
-.category-content h3{
-font-size:1.5rem;
-font-weight:600;
-margin-bottom:12px;
-color:#111827;
-transition:.3s;
-}
-
-.category-card:hover .category-content h3{
-color:#2563eb;
-}
-
-.category-content p{
-color:#64748b;
-line-height:1.7;
-margin-bottom:20px;
-}
-
-/* ===========================
-   Explore Button
-=========================== */
-
-.category-btn{
-display:inline-flex;
-align-items:center;
-gap:8px;
-padding:12px 26px;
-background:#2563eb;
-color:#ffffff;
-text-decoration:none;
-border-radius:50px;
-font-weight:600;
-transition:.3s;
-}
-
-.category-btn:hover{
-background:#1d4ed8;
-}
-
-.category-btn i{
-transition:.3s;
-}
-
-.category-card:hover .category-btn i{
-transform:translateX(6px);
-}
-/* ===========================
-   Gradient Overlay
-=========================== */
-
-.category-card::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(to top,
-rgba(0,0,0,.45),
-rgba(0,0,0,0));
-opacity:0;
-transition:.4s ease;
-pointer-events:none;
-}
-
-.category-card:hover::before{
-opacity:1;
-}
-
-/* ===========================
-   Shine Effect
-=========================== */
-
-.category-card::after{
-content:"";
-position:absolute;
-top:-150%;
-left:-70%;
-width:45%;
-height:300%;
-background:rgba(255,255,255,.25);
-transform:rotate(25deg);
-transition:.8s;
-pointer-events:none;
-}
-
-.category-card:hover::after{
-left:130%;
-}
-
-/* ===========================
-   Floating Animation
-=========================== */
-
-@keyframes floatCard{
-
-0%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-8px);
-}
-
-100%{
-transform:translateY(0px);
-}
+   align-items: start;
 
 }
 
-.category-card:hover{
-animation:floatCard 2s ease-in-out infinite;
+/* ==========================================
+            CATEGORY CARD
+========================================== */
+
+.category-card {
+
+   position: relative;
+
+   display: flex;
+
+   flex-direction: column;
+
+   height: 100%;
+
+   background: #ffffff;
+
+   border-radius: 20px;
+
+   overflow: hidden;
+
+   text-decoration: none;
+
+   box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+
+   transition:
+      transform .35s ease,
+      box-shadow .35s ease;
+
 }
 
-/* ===========================
-   Smooth Transition
-=========================== */
+.category-card:hover {
+
+   transform: translateY(-8px);
+
+   box-shadow: 0 20px 45px rgba(37, 99, 235, .18);
+
+}
+
+/* ==========================================
+            IMAGE
+========================================== */
+
+.category-image {
+
+   width: 100%;
+
+   height: 230px;
+
+   overflow: hidden;
+
+   position: relative;
+
+   flex-shrink: 0;
+
+}
+
+.category-image img {
+
+   width: 100%;
+
+   height: 100%;
+
+   object-fit: cover;
+
+   display: block;
+
+   transition: transform .45s ease;
+
+}
+
+.category-card:hover .category-image img {
+
+   transform: scale(1.08);
+
+}
+
+/* ==========================================
+            BADGE
+========================================== */
+
+.category-badge {
+
+   position: absolute;
+
+   top: 15px;
+
+   left: 15px;
+
+   padding: 7px 15px;
+
+   background: #2563eb;
+
+   color: #fff;
+
+   border-radius: 30px;
+
+   font-size: 13px;
+
+   font-weight: 600;
+
+}
+
+/* ==========================================
+            CONTENT
+========================================== */
+
+.category-content {
+
+   flex: 1;
+
+   display: flex;
+
+   flex-direction: column;
+
+   justify-content: center;
+
+   align-items: center;
+
+   padding: 25px;
+
+   text-align: center;
+
+}
+
+.category-content h3 {
+
+   font-size: 1.45rem;
+
+   font-weight: 700;
+
+   color: #111827;
+
+   margin-bottom: 12px;
+
+   transition: .3s;
+
+}
+
+.category-card:hover .category-content h3 {
+
+   color: #2563eb;
+
+}
+
+.category-content p {
+
+   color: #64748b;
+
+   font-size: 15px;
+
+   margin-bottom: 22px;
+
+}
+
+/* ==========================================
+            BUTTON
+========================================== */
+
+.category-btn {
+
+   width: 180px;
+
+   height: 50px;
+
+   display: flex;
+
+   justify-content: center;
+
+   align-items: center;
+
+   gap: 10px;
+
+   border-radius: 50px;
+
+   background: #2563eb;
+
+   color: #fff;
+
+   font-size: 15px;
+
+   font-weight: 600;
+
+   transition: .3s;
+
+}
+
+.category-btn:hover {
+
+   background: #1d4ed8;
+
+   transform: translateY(-3px);
+
+}
+
+.category-btn i {
+
+   transition: .3s;
+
+}
+
+.category-btn:hover i {
+
+   transform: translateX(5px);
+
+}
+
+/* ==========================================
+            SHINE EFFECT
+========================================== */
+
+.category-card::before {
+
+   content: "";
+
+   position: absolute;
+
+   top: 0;
+
+   left: -120%;
+
+   width: 60%;
+
+   height: 100%;
+
+   background: linear-gradient(90deg,
+         transparent,
+         rgba(255, 255, 255, .45),
+         transparent);
+
+   transform: skewX(-25deg);
+
+   pointer-events: none;
+
+}
+
+.category-card:hover::before {
+
+   animation: shine .8s linear;
+
+}
+
+@keyframes shine {
+
+   0% {
+
+      left: -120%;
+
+   }
+
+   100% {
+
+      left: 130%;
+
+   }
+
+}
+
+/* ==========================================
+            CARD REVEAL
+========================================== */
+
+@keyframes cardReveal {
+
+   0% {
+
+      opacity: 0;
+
+      transform: translateY(35px);
+
+   }
+
+   100% {
+
+      opacity: 1;
+
+      transform: translateY(0);
+
+   }
+
+}
+
+.category-card {
+
+   opacity: 0;
+
+   animation: cardReveal .7s ease forwards;
+
+}
+
+.categories-grid .category-card:nth-child(1) {
+   animation-delay: .1s;
+}
+
+.categories-grid .category-card:nth-child(2) {
+   animation-delay: .2s;
+}
+
+.categories-grid .category-card:nth-child(3) {
+   animation-delay: .3s;
+}
+
+.categories-grid .category-card:nth-child(4) {
+   animation-delay: .4s;
+}
+
+.categories-grid .category-card:nth-child(5) {
+   animation-delay: .5s;
+}
+
+.categories-grid .category-card:nth-child(6) {
+   animation-delay: .6s;
+}
+
+.categories-grid .category-card:nth-child(7) {
+   animation-delay: .7s;
+}
+
+.categories-grid .category-card:nth-child(8) {
+   animation-delay: .8s;
+}
+
+.categories-grid .category-card:nth-child(9) {
+   animation-delay: .9s;
+}
+
+/* ==========================================
+            NO CATEGORY
+========================================== */
+
+.no-category {
+
+   grid-column: 1/-1;
+
+   text-align: center;
+
+   padding: 80px 20px;
+
+   font-size: 2rem;
+
+   font-weight: 700;
+
+   color: #64748b;
+
+}
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+@media(max-width:992px) {
+
+   .page-banner {
+
+      padding: 80px 0;
+
+   }
+
+   .page-banner h1 {
+
+      font-size: 2.5rem;
+
+   }
+
+   .categories-grid {
+
+      grid-template-columns: repeat(2, 1fr);
+
+   }
+
+}
+
+@media(max-width:768px) {
+
+   .page-banner {
+
+      padding: 70px 0;
+
+   }
+
+   .page-banner h1 {
+
+      font-size: 2rem;
+
+   }
+
+   .page-banner p {
+
+      font-size: 1rem;
+
+   }
+
+   .categories-page {
+
+      padding: 70px 0;
+
+   }
+
+   .categories-grid {
+
+      grid-template-columns: 1fr;
+
+   }
+
+   .category-image {
+
+      height: 220px;
+
+   }
+
+   .category-content {
+
+      padding: 20px;
+
+   }
+
+}
+
+@media(max-width:480px) {
+
+   .page-banner h1 {
+
+      font-size: 1.8rem;
+
+   }
+
+   .page-banner p {
+
+      font-size: .95rem;
+
+   }
+
+   .category-search input {
+
+      height: 50px;
+
+      font-size: 15px;
+
+      padding: 0 18px;
+
+   }
+
+   .category-content h3 {
+
+      font-size: 1.2rem;
+
+   }
+
+   .category-btn {
+
+      width: 100%;
+
+   }
+
+}
+
+/* ==========================================
+            PERFORMANCE
+========================================== */
 
 .category-card,
-.category-image,
 .category-image img,
-.category-content,
-.category-btn,
-.category-icon{
-transition:all .4s ease;
-}
+.category-btn {
 
-/* ===========================
-   Responsive
-=========================== */
-
-@media(max-width:992px){
-
-.page-banner{
-
-padding:80px 0;
-
-}
-
-.page-banner h1{
-
-font-size:2.5rem;
-
-}
-
-.categories-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-@media(max-width:768px){
-
-.page-banner{
-
-padding:70px 0;
-
-}
-
-.page-banner h1{
-
-font-size:2rem;
-
-}
-
-.page-banner p{
-
-font-size:1rem;
-
-}
-
-.section-header h2{
-
-font-size:2rem;
-
-}
-
-.categories-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.category-image{
-
-height:220px;
-
-}
-
-.category-content{
-
-padding:20px;
-
-}
-
-}
-
-@media(max-width:480px){
-
-.category-search input{
-
-padding:13px 18px;
-
-font-size:15px;
-
-}
-
-.page-banner h1{
-
-font-size:1.8rem;
-
-}
-
-.section-header h2{
-
-font-size:1.7rem;
-
-}
-
-.category-btn{
-
-width:100%;
-justify-content:center;
-
-}
+   will-change: transform;
 
 }
