@@ -59,3 +59,113 @@ box-shadow:0 0 12px rgba(37,99,235,.15);
 resize:none;
 min-height:140px;
 }
+/* ==========================================
+            PAYMENT METHOD
+========================================== */
+
+.checkout-form h3{
+margin-top:15px;
+margin-bottom:15px;
+font-size:1.3rem;
+color:#111827;
+}
+
+.checkout-form label{
+display:flex;
+align-items:center;
+gap:10px;
+padding:14px 18px;
+border:2px solid #e5e7eb;
+border-radius:12px;
+cursor:pointer;
+transition:.3s;
+}
+
+.checkout-form label:hover{
+border-color:#2563eb;
+background:#eff6ff;
+}
+
+.checkout-form input[type="radio"]{
+width:auto;
+margin:0;
+}
+
+/* ==========================================
+            PLACE ORDER BUTTON
+========================================== */
+
+.checkout-btn{
+width:100%;
+padding:16px;
+margin-top:20px;
+border:none;
+border-radius:12px;
+background:#2563eb;
+color:#ffffff;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+transition:.35s;
+box-shadow:0 10px 25px rgba(37,99,235,.2);
+}
+
+.checkout-btn:hover{
+background:#1d4ed8;
+transform:translateY(-3px);
+box-shadow:0 18px 35px rgba(37,99,235,.3);
+}
+
+/* ==========================================
+            ORDER SUMMARY
+========================================== */
+
+.order-summary{
+background:#ffffff;
+padding:35px;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+position:sticky;
+top:110px;
+}
+
+.order-summary h2{
+margin-bottom:25px;
+font-size:1.8rem;
+color:#111827;
+}
+
+#orderItems{
+display:flex;
+flex-direction:column;
+gap:18px;
+margin-bottom:25px;
+}
+
+.summary-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding-bottom:12px;
+border-bottom:1px solid #e5e7eb;
+}
+
+.summary-item h4{
+font-size:1rem;
+color:#1e293b;
+}
+
+.summary-item span{
+font-weight:600;
+color:#2563eb;
+}
+
+.summary-total{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding-top:20px;
+border-top:2px solid #e5e7eb;
+font-size:1.2rem;
+font-weight:700;
+}
