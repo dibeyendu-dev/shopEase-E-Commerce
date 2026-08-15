@@ -59,3 +59,86 @@ line-height:1.8;
 color:#64748b;
 margin-bottom:35px;
 }
+/* ==========================================
+            ORDER INFO
+========================================== */
+
+.order-info{
+background:#f8fafc;
+padding:25px;
+border-radius:16px;
+margin-bottom:35px;
+text-align:left;
+border:1px solid #e5e7eb;
+}
+
+.order-info p{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 0;
+margin:0;
+border-bottom:1px solid #e5e7eb;
+font-size:1rem;
+color:#1e293b;
+}
+
+.order-info p:last-child{
+border-bottom:none;
+}
+
+.order-info strong{
+font-weight:600;
+color:#111827;
+}
+
+.order-info span{
+font-weight:700;
+color:#2563eb;
+}
+
+/* ==========================================
+            BUTTONS
+========================================== */
+
+.success-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.shop-btn,
+.home-btn{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+padding:15px 30px;
+border-radius:12px;
+text-decoration:none;
+font-size:16px;
+font-weight:600;
+transition:.35s;
+}
+
+.shop-btn{
+background:#2563eb;
+color:#ffffff;
+box-shadow:0 10px 25px rgba(37,99,235,.2);
+}
+
+.shop-btn:hover{
+background:#1d4ed8;
+transform:translateY(-3px);
+box-shadow:0 18px 35px rgba(37,99,235,.3);
+}
+
+.home-btn{
+background:#e5e7eb;
+color:#111827;
+}
+
+.home-btn:hover{
+background:#d1d5db;
+transform:translateY(-3px);
+}
