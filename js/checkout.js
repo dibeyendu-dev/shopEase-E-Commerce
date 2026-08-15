@@ -49,3 +49,84 @@ orderItems.innerHTML += `
 orderTotal.textContent = `₹${total}`;
 
 }
+// ==========================================
+// PLACE ORDER
+// ==========================================
+
+checkoutForm.addEventListener("submit", function (event) {
+
+event.preventDefault();
+
+const fullName = this.querySelector('input[type="text"]').value.trim();
+
+const email = this.querySelector('input[type="email"]').value.trim();
+
+const phone = this.querySelectorAll("input")[2].value.trim();
+
+const address = this.querySelector("textarea").value.trim();
+
+if(fullName==="" || email==="" || phone==="" || address===""){
+
+alert("Please fill all fields.");
+
+return;
+
+}
+
+const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if(!emailPattern.test(email)){
+
+alert("Please enter a valid email.");
+
+return;
+
+}
+
+if(cart.length===0){
+
+alert("Your cart is empty.");
+
+return;
+
+}
+
+// Create Order Object
+
+const order={
+
+customer:fullName,
+
+email:email,
+
+phone:phone,
+
+address:address,
+
+items:cart,
+
+total:total,
+
+payment:this.querySelector('input[name="payment"]:checked').parentElement.textContent.trim(),
+
+orderDate:new Date().toLocaleString()
+
+};
+
+// Save Order
+
+localStorage.setItem("lastOrder",JSON.stringify(order));
+
+// Clear Cart
+
+localStorage.removeItem("cart");
+
+// Success Message
+
+alert("🎉 Order Placed Successfully!");
+
+// Redirect
+
+window.location.href="order-success.html";
+
+});
