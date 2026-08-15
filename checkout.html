@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | ShopEase</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="container">
+
+            <nav class="navbar">
+
+                <a href="index.html" class="logo">
+
+                    Shop<span>Ease</span>
+
+                </a>
+
+                <button class="menu-toggle">
+                    ☰
+                </button>
+
+                <ul class="nav-links">
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="products.html">Products</a></li>
+
+                    <li><a href="categories.html">Categories</a></li>
+
+                    <li><a href="offers.html">Offers</a></li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+
+                <div class="nav-actions">
+
+                    <a href="login.html" class="login-nav-btn">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        Login
+
+                    </a>
+
+                    <a href="wishlist.html" class="icon-btn">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                        <span id="wishlistCount" class="cart-count">
+
+                            0
+
+                        </span>
+
+                    </a>
+
+                    <a href="cart.html" class="icon-btn cart-btn">
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <span id="cartCount" class="cart-count">
+
+                            0
+
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <section class="checkout-section">
+
+        <div class="container">
+
+            <div class="checkout-wrapper">
+
+                <div class="checkout-form">
+
+                    <h2>
+
+                        Billing Details
+
+                    </h2>
+
+                    <form id="checkoutForm">
+
+                        <input type="text" placeholder="Full Name" required>
+
+                        <input type="email" placeholder="Email Address" required>
+
+                        <input type="text" placeholder="Phone Number" required>
+
+                        <textarea placeholder="Delivery Address" rows="5" required></textarea>
+
+                        <h3>
+
+                            Payment Method
+
+                        </h3>
+
+                        <label>
+
+                            <input type="radio" name="payment" checked>
+
+                            Cash On Delivery
+
+                        </label>
+
+                        <label>
+
+                            <input type="radio" name="payment">
+
+                            UPI
+
+                        </label>
+
+                        <label>
+
+                            <input type="radio" name="payment">
+
+                            Credit / Debit Card
+
+                        </label>
+
+                        <button type="submit" class="checkout-btn">
+
+                            Place Order
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <div class="order-summary">
+
+                    <h2>
+
+                        Order Summary
+
+                    </h2>
+
+                    <div id="orderItems">
+
+                    </div>
+
+                    <div class="summary-total">
+
+                        <h3>
+
+                            Total
+
+                        </h3>
+
+                        <h3 id="orderTotal">
+
+                            ₹0
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-bottom">
+
+                <p>
+
+                    © 2026 ShopEase. All Rights Reserved.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="js/checkout.js"></script>
+
+</body>
+
+</html>
