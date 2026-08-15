@@ -142,3 +142,126 @@ color:#111827;
 background:#d1d5db;
 transform:translateY(-3px);
 }
+/* ==========================================
+            CARD ANIMATION
+========================================== */
+
+@keyframes fadeUp{
+
+0%{
+opacity:0;
+transform:translateY(40px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ==========================================
+            SUCCESS ICON ANIMATION
+========================================== */
+
+.success-icon{
+animation:pop .8s ease;
+}
+
+@keyframes pop{
+
+0%{
+transform:scale(0);
+}
+
+70%{
+transform:scale(1.15);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* ==========================================
+            BUTTON ACTIVE
+========================================== */
+
+.shop-btn:active,
+.home-btn:active{
+transform:scale(.97);
+}
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.success-section{
+padding:70px 20px;
+}
+
+.success-card{
+padding:35px 25px;
+}
+
+.success-card h1{
+font-size:2rem;
+}
+
+.success-icon{
+width:100px;
+height:100px;
+}
+
+.success-icon i{
+font-size:50px;
+}
+
+.order-info p{
+flex-direction:column;
+align-items:flex-start;
+gap:6px;
+}
+
+.success-buttons{
+flex-direction:column;
+}
+
+.shop-btn,
+.home-btn{
+width:100%;
+}
+
+}
+
+@media(max-width:480px){
+
+.success-section{
+padding:50px 15px;
+}
+
+.success-card{
+padding:25px 18px;
+}
+
+.success-card h1{
+font-size:1.7rem;
+}
+
+.success-card p{
+font-size:.95rem;
+}
+
+.success-icon{
+width:85px;
+height:85px;
+}
+
+.success-icon i{
+font-size:42px;
+}
+
+}
