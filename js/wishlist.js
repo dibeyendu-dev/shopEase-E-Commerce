@@ -1,33 +1,14 @@
 const wishlistItems = document.getElementById("wishlistItems");
 const wishlistCount = document.getElementById("wishlistCount");
 const cartCount = document.getElementById("cartCount");
+const clearWishlist = document.getElementById("clearWishlist");
 
-let wishlist = [];
-let cart = [];
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function loadWishlist() {
-
-    const savedWishlist = localStorage.getItem("wishlist");
-
-    if (savedWishlist) {
-
-        wishlist = JSON.parse(savedWishlist);
-
-    }
-
-}
-
-function loadCart() {
-
-    const savedCart = localStorage.getItem("cart");
-
-    if (savedCart) {
-
-        cart = JSON.parse(savedCart);
-
-    }
-
-}
+// =========================
+// SAVE
+// =========================
 
 function saveWishlist() {
 
@@ -41,27 +22,55 @@ function saveCart() {
 
 }
 
+// =========================
+// COUNTS
+// =========================
+
 function updateCounts() {
 
-    if (wishlistCount) {
+    wishlistCount.textContent = wishlist.length;
 
-        wishlistCount.textContent = wishlist.length;
+    const total = cart.reduce((sum, item) => sum + item.quantity, 0);
 
-    }
-
-    if (cartCount) {
-
-        const total = cart.reduce((sum, item) => {
-
-            return sum + item.quantity;
-
-        }, 0);
-
-        cartCount.textContent = total;
-
-    }
+    cartCount.textContent = total;
 
 }
+
+// =========================
+// TOAST
+// =========================
+
+function showToast(message, color = "#111827") {
+
+    let toast = document.querySelector(".toast");
+
+    if (!toast) {
+
+        toast = document.createElement("div");
+
+        toast.className = "toast";
+
+        document.body.appendChild(toast);
+
+    }
+
+    toast.style.background = color;
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    }, 2200);
+
+}
+
+// =========================
+// RENDER
+// =========================
 
 function renderWishlist() {
 
@@ -77,11 +86,7 @@ function renderWishlist() {
 
 <h2>Your Wishlist Is Empty</h2>
 
-<p>
-
-Save your favourite products here.
-
-</p>
+<p>Save your favourite products here.</p>
 
 <a href="products.html" class="shop-btn">
 
@@ -94,7 +99,7 @@ Browse Products
 `;
 
         updateCounts();
-        wishlistEvents();
+
         return;
 
     }
@@ -115,27 +120,23 @@ Browse Products
 
 <h3>${product.name}</h3>
 
-<p class="wishlist-category">
+<p>${product.category}</p>
 
-${product.category}
-
-</p>
-
-<h4 class="wishlist-price">
-
-₹${product.price}
-
-</h4>
+<h4>₹${product.price}</h4>
 
 <div class="wishlist-actions">
 
-<button class="add-cart-btn" data-id="${product.id}">
+<button
+class="add-cart-btn"
+data-id="${product.id}">
 
-Add To Cart
+Move To Cart
 
 </button>
 
-<button class="remove-wishlist-btn" data-id="${product.id}">
+<button
+class="remove-btn"
+data-id="${product.id}">
 
 <i class="fa-solid fa-trash"></i>
 
@@ -153,38 +154,31 @@ Add To Cart
 
     updateCounts();
 
+    events();
+
 }
-function addToCart() {
+
+// =========================
+// MOVE TO CART
+// =========================
+
+function moveToCart() {
 
     const id = Number(this.dataset.id);
 
-    const existingProduct = cart.find(item => item.id === id);
+    const product = wishlist.find(item => item.id === id);
 
-    if (existingProduct) {
+    const exists = cart.find(item => item.id === id);
 
-        existingProduct.quantity++;
+    if (exists) {
 
-    }
+        exists.quantity++;
 
-    else {
-
-        const product = wishlist.find(item => item.id === id);
+    } else {
 
         cart.push({
 
-            id: product.id,
-
-            name: product.name,
-
-            category: product.category,
-
-            price: product.price,
-
-            rating: product.rating,
-
-            discount: product.discount,
-
-            image: product.image,
+            ...product,
 
             quantity: 1
 
@@ -192,15 +186,23 @@ function addToCart() {
 
     }
 
+    wishlist = wishlist.filter(item => item.id !== id);
+
+    saveWishlist();
+
     saveCart();
 
-    updateCounts();
+    renderWishlist();
 
-    alert("Product Added To Cart");
+    showToast("Moved To Cart", "#22c55e");
 
 }
 
-function removeWishlistItem() {
+// =========================
+// REMOVE
+// =========================
+
+function removeItem() {
 
     const id = Number(this.dataset.id);
 
@@ -210,32 +212,56 @@ function removeWishlistItem() {
 
     renderWishlist();
 
-}
-
-function wishlistEvents() {
-
-    const addCartButtons = document.querySelectorAll(".add-cart-btn");
-
-    const removeButtons = document.querySelectorAll(".remove-wishlist-btn");
-
-    addCartButtons.forEach(button => {
-
-        button.addEventListener("click", addToCart);
-
-    });
-
-    removeButtons.forEach(button => {
-
-        button.addEventListener("click", removeWishlistItem);
-
-    });
+    showToast("Removed From Wishlist", "#ef4444");
 
 }
 
-loadWishlist();
+// =========================
+// CLEAR
+// =========================
 
-loadCart();
+clearWishlist?.addEventListener("click", () => {
+
+    if (wishlist.length === 0) {
+
+        showToast("Wishlist Already Empty", "#ef4444");
+
+        return;
+
+    }
+
+    const confirmDelete = confirm("Clear Wishlist ?");
+
+    if (!confirmDelete) return;
+
+    wishlist = [];
+
+    saveWishlist();
+
+    renderWishlist();
+
+    showToast("Wishlist Cleared", "#ef4444");
+
+});
+
+// =========================
+// EVENTS
+// =========================
+
+function events() {
+
+    document.querySelectorAll(".add-cart-btn").forEach(btn => {
+
+        btn.onclick = moveToCart;
+
+    });
+
+    document.querySelectorAll(".remove-btn").forEach(btn => {
+
+        btn.onclick = removeItem;
+
+    });
+
+}
 
 renderWishlist();
-
-wishlistEvents();

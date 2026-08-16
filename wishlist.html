@@ -2,19 +2,26 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Wishlist | ShopEase</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/wishlist.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
+
+    <!-- ================= NAVBAR ================= -->
 
     <header class="header">
 
@@ -23,34 +30,106 @@
             <nav class="navbar">
 
                 <a href="index.html" class="logo">
+
                     Shop<span>Ease</span>
+
                 </a>
+
+                <button class="menu-toggle">
+
+                    ☰
+
+                </button>
 
                 <ul class="nav-links">
 
                     <li>
-                        <a href="index.html">Home</a>
-                    </li>
 
-                    <li>
-                        <a href="products.html">Products</a>
-                    </li>
+                        <a href="index.html">
 
-                    <li>
-                        <a href="wishlist.html" class="icon-btn">
-                            <i class="fa-solid fa-heart"></i>
-                            <span id="wishlistCount" class="cart-count">0</span>
+                            Home
+
                         </a>
+
                     </li>
 
                     <li>
-                        <a href="cart.html" class="icon-btn cart-btn">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span id="cartCount" class="cart-count">0</span>
+
+                        <a href="products.html">
+
+                            Products
+
                         </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="categories.html">
+
+                            Categories
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="offers.html">
+
+                            Offers
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="contact.html">
+
+                            Contact
+
+                        </a>
+
                     </li>
 
                 </ul>
+
+                <div class="nav-actions">
+
+                    <a href="login.html" class="login-nav-btn">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        Login
+
+                    </a>
+
+                    <a href="wishlist.html" class="icon-btn">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                        <span id="wishlistCount" class="cart-count">
+
+                            0
+
+                        </span>
+
+                    </a>
+
+                    <a href="cart.html" class="icon-btn">
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <span id="cartCount" class="cart-count">
+
+                            0
+
+                        </span>
+
+                    </a>
+
+                </div>
 
             </nav>
 
@@ -58,23 +137,51 @@
 
     </header>
 
-    <header class="page-header">
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-header">
 
         <div class="container">
 
-            <h1>My Wishlist</h1>
+            <h1>
+
+                My Wishlist
+
+            </h1>
 
             <p>
-                Save your favourite products for later.
+
+                Save your favourite products and buy them later.
+
             </p>
 
         </div>
 
-    </header>
+    </section>
+
+    <!-- ================= WISHLIST ================= -->
 
     <section class="wishlist-section">
 
         <div class="container">
+
+            <div class="wishlist-top">
+
+                <h2>
+
+                    Wishlist Items
+
+                </h2>
+
+                <button id="clearWishlist" class="clear-btn">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                    Clear Wishlist
+
+                </button>
+
+            </div>
 
             <div id="wishlistItems" class="wishlist-grid">
 
@@ -84,13 +191,21 @@
 
     </section>
 
+    <!-- ================= FOOTER ================= -->
+
     <footer class="footer">
 
         <div class="container">
 
-            <p>
-                © 2026 ShopEase. All Rights Reserved.
-            </p>
+            <div class="footer-bottom">
+
+                <p>
+
+                    © 2026 ShopEase. All Rights Reserved.
+
+                </p>
+
+            </div>
 
         </div>
 
