@@ -1,0 +1,385 @@
+/* ==========================================
+            ABOUT HERO
+========================================== */
+
+.about-hero{
+padding:100px 0;
+background:linear-gradient(135deg,#2563eb,#1d4ed8,#06b6d4);
+text-align:center;
+color:#ffffff;
+}
+
+.about-hero .section-tag{
+background:rgba(255,255,255,.15);
+color:#ffffff;
+}
+
+.about-hero h1{
+font-size:3.2rem;
+font-weight:700;
+margin:25px 0 20px;
+}
+
+.about-hero p{
+max-width:750px;
+margin:auto;
+font-size:1.1rem;
+line-height:1.8;
+opacity:.95;
+}
+
+/* ==========================================
+            ABOUT STORY
+========================================== */
+
+.about-story{
+padding:90px 0;
+background:#ffffff;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:350px 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about-icon{
+width:320px;
+height:320px;
+margin:auto;
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+box-shadow:0 20px 45px rgba(37,99,235,.25);
+transition:.4s;
+}
+
+.about-icon:hover{
+transform:rotate(8deg) scale(1.05);
+}
+
+.about-icon i{
+font-size:120px;
+color:#ffffff;
+}
+
+.about-content h2{
+font-size:2.5rem;
+margin:20px 0;
+color:#111827;
+}
+
+.about-content p{
+font-size:16px;
+line-height:1.9;
+color:#64748b;
+margin-bottom:18px;
+}
+
+/* ==========================================
+            ABOUT POINTS
+========================================== */
+
+.about-points{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+margin-top:30px;
+}
+
+.about-points div{
+display:flex;
+align-items:center;
+gap:12px;
+background:#f8fafc;
+padding:16px 18px;
+border-radius:12px;
+font-weight:500;
+transition:.3s;
+}
+
+.about-points div:hover{
+background:#2563eb;
+color:#ffffff;
+transform:translateY(-5px);
+}
+
+.about-points i{
+color:#22c55e;
+font-size:18px;
+}
+
+.about-points div:hover i{
+color:#ffffff;
+}
+
+/* ==========================================
+            MISSION SECTION
+========================================== */
+
+.mission-section{
+padding:90px 0;
+background:#f8fafc;
+}
+
+.mission-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+.mission-card{
+background:#ffffff;
+padding:40px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+transition:.35s;
+}
+
+.mission-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(37,99,235,.18);
+}
+
+.mission-card i{
+width:90px;
+height:90px;
+margin:auto;
+margin-bottom:25px;
+background:#2563eb;
+color:#ffffff;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:38px;
+}
+
+.mission-card h3{
+font-size:1.8rem;
+margin-bottom:15px;
+color:#111827;
+}
+
+.mission-card p{
+line-height:1.8;
+color:#64748b;
+}
+/* ==========================================
+            WHY CHOOSE US
+========================================== */
+
+.why-us{
+padding:90px 0;
+background:#ffffff;
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+margin-top:50px;
+}
+
+.why-card{
+background:#ffffff;
+padding:35px 30px;
+text-align:center;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+transition:.35s;
+position:relative;
+overflow:hidden;
+}
+
+.why-card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:5px;
+background:#2563eb;
+transform:scaleX(0);
+transition:.35s;
+}
+
+.why-card:hover::before{
+transform:scaleX(1);
+}
+
+.why-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 45px rgba(37,99,235,.18);
+}
+
+.why-card i{
+width:85px;
+height:85px;
+margin:auto;
+margin-bottom:25px;
+background:#2563eb;
+color:#ffffff;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:34px;
+transition:.35s;
+}
+
+.why-card:hover i{
+background:#1d4ed8;
+transform:rotate(8deg) scale(1.08);
+}
+
+.why-card h3{
+font-size:1.4rem;
+margin-bottom:15px;
+color:#111827;
+}
+
+.why-card p{
+color:#64748b;
+line-height:1.8;
+}
+
+/* ==========================================
+            STATISTICS
+========================================== */
+
+.stats-section{
+padding:90px 0;
+background:linear-gradient(135deg,#2563eb,#1d4ed8,#06b6d4);
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+.stat-card{
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(12px);
+padding:40px 25px;
+border-radius:20px;
+text-align:center;
+border:1px solid rgba(255,255,255,.18);
+transition:.35s;
+}
+
+.stat-card:hover{
+transform:translateY(-10px);
+background:rgba(255,255,255,.18);
+}
+
+.stat-card i{
+font-size:40px;
+color:#ffffff;
+margin-bottom:20px;
+}
+
+.stat-card h2{
+font-size:3rem;
+font-weight:700;
+color:#ffffff;
+margin-bottom:10px;
+}
+
+.stat-card p{
+font-size:16px;
+color:#e5e7eb;
+}
+
+/* ==========================================
+            OUR VALUES
+========================================== */
+
+.values-section{
+padding:90px 0;
+background:#f8fafc;
+}
+
+.values-section .why-grid{
+margin-top:50px;
+}
+
+.values-section .why-card{
+background:#ffffff;
+}
+
+.values-section .why-card:hover{
+background:#2563eb;
+}
+
+.values-section .why-card:hover h3,
+.values-section .why-card:hover p{
+color:#ffffff;
+}
+
+.values-section .why-card:hover i{
+background:#ffffff;
+color:#2563eb;
+}
+
+/* ==========================================
+            CARD ANIMATION
+========================================== */
+
+@keyframes fadeUp{
+
+0%{
+opacity:0;
+transform:translateY(40px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.why-card,
+.mission-card,
+.stat-card{
+animation:fadeUp .8s ease forwards;
+opacity:0;
+}
+
+.why-grid .why-card:nth-child(1){
+animation-delay:.1s;
+}
+
+.why-grid .why-card:nth-child(2){
+animation-delay:.2s;
+}
+
+.why-grid .why-card:nth-child(3){
+animation-delay:.3s;
+}
+
+.why-grid .why-card:nth-child(4){
+animation-delay:.4s;
+}
+
+.stats-grid .stat-card:nth-child(1){
+animation-delay:.2s;
+}
+
+.stats-grid .stat-card:nth-child(2){
+animation-delay:.3s;
+}
+
+.stats-grid .stat-card:nth-child(3){
+animation-delay:.4s;
+}
+
+.stats-grid .stat-card:nth-child(4){
+animation-delay:.5s;
+}
