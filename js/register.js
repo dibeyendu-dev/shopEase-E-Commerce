@@ -5,90 +5,117 @@
 const registerForm = document.getElementById("registerForm");
 
 const name = document.getElementById("name");
-
 const email = document.getElementById("email");
-
+const phone = document.getElementById("phone");
 const password = document.getElementById("password");
-
 const confirmPassword = document.getElementById("confirmPassword");
 
 const togglePassword = document.getElementById("togglePassword");
-
 const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
+
+const terms = document.getElementById("terms");
+
 // ==========================================
-// SHOW / HIDE PASSWORD
+// PASSWORD TOGGLE
 // ==========================================
 
-togglePassword.addEventListener("click",function(){
+function togglePasswordField(input, icon){
 
-if(password.type==="password"){
+if(input.type==="password"){
 
-password.type="text";
+input.type="text";
 
-this.classList.remove("fa-eye");
-
-this.classList.add("fa-eye-slash");
+icon.classList.replace("fa-eye","fa-eye-slash");
 
 }
 
 else{
 
-password.type="password";
+input.type="password";
 
-this.classList.remove("fa-eye-slash");
-
-this.classList.add("fa-eye");
+icon.classList.replace("fa-eye-slash","fa-eye");
 
 }
 
-});
+}
 
-// ==========================================
-// SHOW / HIDE CONFIRM PASSWORD
-// ==========================================
+togglePassword.onclick=()=>{
 
-toggleConfirmPassword.addEventListener("click",function(){
-
-if(confirmPassword.type==="password"){
-
-confirmPassword.type="text";
-
-this.classList.remove("fa-eye");
-
-this.classList.add("fa-eye-slash");
+togglePasswordField(password,togglePassword);
 
 }
 
-else{
+toggleConfirmPassword.onclick=()=>{
 
-confirmPassword.type="password";
-
-this.classList.remove("fa-eye-slash");
-
-this.classList.add("fa-eye");
+togglePasswordField(confirmPassword,toggleConfirmPassword);
 
 }
 
-});
 // ==========================================
-// REGISTER FORM
+// TOAST
 // ==========================================
 
-registerForm.addEventListener("submit",function(event){
+function showToast(message,color="#111827"){
 
-event.preventDefault();
+let toast=document.querySelector(".toast");
+
+if(!toast){
+
+toast=document.createElement("div");
+
+toast.className="toast";
+
+document.body.appendChild(toast);
+
+}
+
+toast.style.background=color;
+
+toast.textContent=message;
+
+toast.classList.add("show");
+
+setTimeout(()=>{
+
+toast.classList.remove("show");
+
+},2500);
+
+}
+
+// ==========================================
+// REGISTER
+// ==========================================
+
+registerForm.addEventListener("submit",function(e){
+
+e.preventDefault();
 
 const userName=name.value.trim();
 
 const userEmail=email.value.trim();
 
+const userPhone=phone.value.trim();
+
 const userPassword=password.value.trim();
 
-const userConfirmPassword=confirmPassword.value.trim();
+const confirm=confirmPassword.value.trim();
 
-if(userName==="" || userEmail==="" || userPassword==="" || userConfirmPassword===""){
+if(
 
-alert("Please fill all fields.");
+userName==="" ||
+
+userEmail==="" ||
+
+userPhone==="" ||
+
+userPassword==="" ||
+
+confirm===""
+
+){
+
+showToast("Please fill all fields","#ef4444");
 
 return;
 
@@ -98,60 +125,80 @@ const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 if(!emailPattern.test(userEmail)){
 
-alert("Please enter a valid email.");
+showToast("Invalid Email","#ef4444");
 
 return;
 
 }
 
-if(userPassword.length<6){
+const phonePattern=/^[0-9]{10}$/;
 
-alert("Password must be at least 6 characters.");
+if(!phonePattern.test(userPhone)){
 
-return;
-
-}
-
-if(userPassword!==userConfirmPassword){
-
-alert("Passwords do not match.");
+showToast("Enter Valid Phone Number","#ef4444");
 
 return;
 
 }
 
-// Load Existing Users
+const passwordPattern=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
 
-const users=JSON.parse(localStorage.getItem("users")) || [];
+if(!passwordPattern.test(userPassword)){
 
-// Check Duplicate Email
-
-const alreadyExists=users.some(user=>user.email===userEmail);
-
-if(alreadyExists){
-
-alert("Email already registered.");
+showToast("Password must contain Uppercase, Lowercase, Number and 8 Characters","#ef4444");
 
 return;
 
 }
 
-// Save New User
+if(userPassword!==confirm){
 
-const newUser={
+showToast("Passwords do not match","#ef4444");
+
+return;
+
+}
+
+if(!terms.checked){
+
+showToast("Accept Terms & Conditions","#ef4444");
+
+return;
+
+}
+
+const users=JSON.parse(localStorage.getItem("users"))||[];
+
+const exists=users.some(user=>user.email===userEmail);
+
+if(exists){
+
+showToast("Email already registered","#ef4444");
+
+return;
+
+}
+
+users.push({
 
 name:userName,
+
 email:userEmail,
+
+phone:userPhone,
+
 password:userPassword
 
-};
-
-users.push(newUser);
+});
 
 localStorage.setItem("users",JSON.stringify(users));
 
-alert("Registration Successful 🎉");
+showToast("Registration Successful 🎉","#22c55e");
+
+setTimeout(()=>{
 
 window.location.href="login.html";
+
+},1500);
 
 });
