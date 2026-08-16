@@ -383,3 +383,201 @@ animation-delay:.4s;
 .stats-grid .stat-card:nth-child(4){
 animation-delay:.5s;
 }
+/* ==========================================
+            CALL TO ACTION
+========================================== */
+
+.about-cta{
+padding:100px 0;
+background:linear-gradient(135deg,#111827,#1f2937);
+text-align:center;
+color:#ffffff;
+}
+
+.about-cta h2{
+font-size:3rem;
+font-weight:700;
+margin-bottom:20px;
+}
+
+.about-cta p{
+max-width:700px;
+margin:0 auto 40px;
+font-size:1.1rem;
+line-height:1.8;
+color:#d1d5db;
+}
+
+.cta-buttons{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.cta-buttons .btn{
+min-width:180px;
+text-align:center;
+}
+
+.cta-buttons .btn-outline{
+border:2px solid #ffffff;
+color:#ffffff;
+background:transparent;
+}
+
+.cta-buttons .btn-outline:hover{
+background:#ffffff;
+color:#111827;
+}
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+@media(max-width:1200px){
+
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:992px){
+
+.about-grid{
+grid-template-columns:1fr;
+text-align:center;
+gap:40px;
+}
+
+.about-icon{
+width:260px;
+height:260px;
+}
+
+.about-icon i{
+font-size:90px;
+}
+
+.about-points{
+grid-template-columns:1fr;
+}
+
+.mission-grid{
+grid-template-columns:1fr;
+}
+
+.about-content h2{
+font-size:2.2rem;
+}
+
+}
+
+@media(max-width:768px){
+
+.about-hero{
+padding:80px 0;
+}
+
+.about-hero h1{
+font-size:2.4rem;
+}
+
+.about-hero p{
+font-size:1rem;
+}
+
+.stats-grid{
+grid-template-columns:1fr;
+}
+
+.why-grid{
+grid-template-columns:1fr;
+}
+
+.about-cta{
+padding:80px 0;
+}
+
+.about-cta h2{
+font-size:2.2rem;
+}
+
+.about-cta p{
+font-size:1rem;
+}
+
+.cta-buttons{
+flex-direction:column;
+}
+
+.cta-buttons .btn{
+width:100%;
+max-width:300px;
+}
+
+}
+
+@media(max-width:480px){
+
+.about-hero h1{
+font-size:2rem;
+}
+
+.about-content h2{
+font-size:1.8rem;
+}
+
+.about-icon{
+width:220px;
+height:220px;
+}
+
+.about-icon i{
+font-size:70px;
+}
+
+.mission-card,
+.why-card,
+.stat-card{
+padding:30px 20px;
+}
+
+.stat-card h2{
+font-size:2.5rem;
+}
+
+.about-cta h2{
+font-size:1.8rem;
+}
+
+}
+
+/* ==========================================
+            PERFORMANCE
+========================================== */
+
+.about-icon,
+.mission-card,
+.why-card,
+.stat-card,
+.btn{
+will-change:transform;
+}
+
+.about-icon,
+.mission-card,
+.why-card,
+.stat-card{
+transition:all .35s ease;
+}
+
+/* ==========================================
+            SMOOTH SCROLL ANIMATION
+========================================== */
+
+html{
+scroll-behavior:smooth;
+}
