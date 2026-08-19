@@ -361,3 +361,56 @@ width:100%;
 height:1px;
 background:rgba(255,255,255,.12);
 }
+/* ==========================================
+            THEME BUTTON
+========================================== */
+
+.theme-btn{
+
+width:48px;
+
+height:48px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border:none;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.18);
+
+color:#ffffff;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:.35s ease;
+
+}
+
+.theme-btn:hover{
+
+background:#facc15;
+
+color:#1e3a8a;
+
+transform:translateY(-4px) scale(1.08);
+
+}
+
+.theme-btn i{
+
+transition:.35s;
+
+}
+
+.theme-btn:hover i{
+
+transform:rotate(20deg);
+
+}
