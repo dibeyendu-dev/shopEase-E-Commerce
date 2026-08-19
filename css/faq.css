@@ -64,3 +64,60 @@
 .faq-search input::placeholder {
     color: #94a3b8;
 }
+/* ==========================================
+            FAQ CONTAINER
+========================================== */
+
+.faq-container{
+max-width:900px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+/* ==========================================
+            FAQ ITEM
+========================================== */
+
+.faq-item{
+background:#ffffff;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.35s;
+}
+
+.faq-item:hover{
+transform:translateY(-5px);
+box-shadow:0 20px 40px rgba(37,99,235,.15);
+}
+
+/* ==========================================
+            QUESTION
+========================================== */
+
+.faq-question{
+width:100%;
+padding:22px 28px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#ffffff;
+border:none;
+cursor:pointer;
+font-size:18px;
+font-weight:600;
+color:#111827;
+transition:.35s;
+}
+
+.faq-question:hover{
+background:#eff6ff;
+}
+
+.faq-question i{
+font-size:18px;
+color:#2563eb;
+transition:.35s;
+}
