@@ -1,0 +1,66 @@
+.faq-hero {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8, #06b6d4);
+    text-align: center;
+    color: #ffffff;
+}
+
+.faq-hero .section-tag {
+    background: rgba(255, 255, 255, .15);
+    color: #ffffff;
+}
+
+.faq-hero h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin: 25px 0 20px;
+}
+
+.faq-hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: .95;
+}
+
+/* ==========================================
+            FAQ SECTION
+========================================== */
+
+.faq-section {
+    padding: 90px 0;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+/* ==========================================
+            SEARCH BOX
+========================================== */
+
+.faq-search {
+    max-width: 650px;
+    margin: 0 auto 60px;
+    position: relative;
+}
+
+.faq-search input {
+    width: 100%;
+    height: 60px;
+    padding: 0 25px;
+    border: 2px solid #e5e7eb;
+    border-radius: 50px;
+    font-size: 16px;
+    outline: none;
+    background: #ffffff;
+    transition: .35s;
+}
+
+.faq-search input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 18px rgba(37, 99, 235, .15);
+}
+
+.faq-search input::placeholder {
+    color: #94a3b8;
+}
