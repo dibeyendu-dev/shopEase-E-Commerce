@@ -1,0 +1,199 @@
+/* ==========================================
+            GLOBAL DARK MODE
+========================================== */
+
+body.dark{
+
+background:#0f172a;
+
+color:#f8fafc;
+
+transition:background .35s ease,color .35s ease;
+
+}
+
+/* ==========================================
+            HEADER
+========================================== */
+
+body.dark .header{
+
+background:#111827 !important;
+
+box-shadow:0 4px 20px rgba(0,0,0,.4);
+
+}
+
+body.dark .header::after{
+
+background:rgba(255,255,255,.08);
+
+}
+
+/* ==========================================
+            NAVBAR
+========================================== */
+
+body.dark .logo{
+
+color:#ffffff;
+
+}
+
+body.dark .logo span{
+
+color:#22c55e;
+
+}
+
+body.dark .nav-links a{
+
+color:#e5e7eb;
+
+}
+
+body.dark .nav-links a:hover,
+
+body.dark .nav-links a.active{
+
+color:#facc15;
+
+}
+
+body.dark .search-box input{
+
+background:#1e293b;
+
+color:#ffffff;
+
+border:1px solid #334155;
+
+}
+
+body.dark .search-box input::placeholder{
+
+color:#94a3b8;
+
+}
+
+body.dark .login-nav-btn{
+
+background:#2563eb;
+
+}
+
+body.dark .login-nav-btn:hover{
+
+background:#1d4ed8;
+
+}
+
+body.dark .icon-btn{
+
+background:#1e293b;
+
+color:#ffffff;
+
+}
+
+body.dark .icon-btn:hover{
+
+background:#facc15;
+
+color:#111827;
+
+}
+
+body.dark .theme-btn{
+
+background:#1e293b;
+
+color:#facc15;
+
+}
+
+body.dark .theme-btn:hover{
+
+background:#facc15;
+
+color:#111827;
+
+}
+
+/* ==========================================
+            HERO SECTION
+========================================== */
+
+body.dark .hero{
+
+background:linear-gradient(135deg,#0f172a,#1e293b,#111827) !important;
+
+}
+
+body.dark .hero-badge{
+
+background:#1e293b;
+
+color:#facc15;
+
+}
+
+body.dark .hero h1{
+
+color:#ffffff;
+
+}
+
+body.dark .hero p{
+
+color:#cbd5e1;
+
+}
+
+body.dark .hero-image-circle{
+
+background:#1e293b;
+
+border-color:#334155;
+
+}
+
+body.dark .floating-card{
+
+background:#1e293b;
+
+color:#ffffff;
+
+box-shadow:0 15px 30px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================
+            COMMON SECTIONS
+========================================== */
+
+body.dark section{
+
+background:#0f172a;
+
+}
+
+body.dark .section-header h2{
+
+color:#ffffff;
+
+}
+
+body.dark .section-header p{
+
+color:#cbd5e1;
+
+}
+
+body.dark .section-tag{
+
+background:#1e293b;
+
+color:#60a5fa;
+
+}
