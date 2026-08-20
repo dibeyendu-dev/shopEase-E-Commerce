@@ -437,3 +437,252 @@ body.dark .footer a:hover{
 color:#60a5fa;
 
 }
+/* ==========================================
+            LOGIN & REGISTER
+========================================== */
+
+body.dark .login-section,
+body.dark .register-section{
+
+background:#0f172a;
+
+}
+
+body.dark .login-card,
+body.dark .register-card{
+
+background:#1e293b;
+
+box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+body.dark .login-card h2,
+body.dark .register-card h2{
+
+color:#ffffff;
+
+}
+
+body.dark .login-card p,
+body.dark .register-card p{
+
+color:#cbd5e1;
+
+}
+
+body.dark .input-group label{
+
+color:#ffffff;
+
+}
+
+body.dark .password-box{
+
+background:#334155;
+
+border:1px solid #475569;
+
+}
+
+body.dark .password-box input{
+
+background:transparent;
+
+border:none;
+
+}
+
+body.dark .password-box i{
+
+color:#cbd5e1;
+
+}
+
+/* ==========================================
+            CHECKOUT
+========================================== */
+
+body.dark .checkout-section,
+body.dark .checkout-card,
+body.dark .checkout-summary,
+body.dark .payment-box{
+
+background:#1e293b;
+
+color:#ffffff;
+
+}
+
+body.dark .checkout-item{
+
+border-bottom:1px solid #334155;
+
+}
+
+/* ==========================================
+            ORDER SUCCESS
+========================================== */
+
+body.dark .success-section{
+
+background:#0f172a;
+
+}
+
+body.dark .success-card{
+
+background:#1e293b;
+
+}
+
+body.dark .success-card h1{
+
+color:#22c55e;
+
+}
+
+body.dark .success-card p{
+
+color:#cbd5e1;
+
+}
+
+/* ==========================================
+            ABOUT
+========================================== */
+
+body.dark .about-hero,
+body.dark .about-section,
+body.dark .mission-section,
+body.dark .team-section{
+
+background:#0f172a;
+
+}
+
+body.dark .about-card,
+body.dark .mission-card,
+body.dark .team-card{
+
+background:#1e293b;
+
+}
+
+/* ==========================================
+            CATEGORIES / PRODUCTS PAGE
+========================================== */
+
+body.dark .categories-page,
+body.dark .products-page{
+
+background:#0f172a;
+
+}
+
+/* ==========================================
+            PAGE BANNER
+========================================== */
+
+body.dark .page-banner,
+body.dark .page-header,
+body.dark .faq-hero{
+
+background:linear-gradient(135deg,#111827,#1e293b,#334155);
+
+}
+
+/* ==========================================
+            EMPTY STATES
+========================================== */
+
+body.dark .empty-cart,
+body.dark .empty-wishlist,
+body.dark .no-products,
+body.dark .no-category{
+
+background:#1e293b;
+
+color:#ffffff;
+
+}
+
+/* ==========================================
+            404 PAGE
+========================================== */
+
+body.dark .error-page{
+
+background:linear-gradient(135deg,#020617,#111827,#1e293b);
+
+}
+
+body.dark .error-content{
+
+background:rgba(30,41,59,.9);
+
+border:1px solid #334155;
+
+}
+
+/* ==========================================
+            SCROLLBAR
+========================================== */
+
+body.dark::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+body.dark::-webkit-scrollbar-track{
+
+background:#0f172a;
+
+}
+
+body.dark::-webkit-scrollbar-thumb{
+
+background:#475569;
+
+border-radius:20px;
+
+}
+
+body.dark::-webkit-scrollbar-thumb:hover{
+
+background:#64748b;
+
+}
+
+/* ==========================================
+            SMOOTH TRANSITION
+========================================== */
+
+body,
+section,
+div,
+header,
+footer,
+input,
+textarea,
+select,
+button,
+a,
+.card,
+.product-card,
+.category-card{
+
+transition:
+
+background .35s ease,
+
+color .35s ease,
+
+border-color .35s ease,
+
+box-shadow .35s ease,
+
+transform .35s ease;
+
+}
