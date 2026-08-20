@@ -414,3 +414,154 @@ transition:.35s;
 transform:rotate(20deg);
 
 }
+/* ==========================================
+            USER BOX
+========================================== */
+
+.user-box{
+
+position:relative;
+
+display:none;
+
+}
+
+.user-btn{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:11px 20px;
+
+background:#2563eb;
+
+color:#ffffff;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+font-size:.95rem;
+
+font-weight:600;
+
+transition:.35s ease;
+
+}
+
+.user-btn:hover{
+
+background:#1d4ed8;
+
+transform:translateY(-3px);
+
+box-shadow:0 12px 25px rgba(37,99,235,.3);
+
+}
+
+.user-btn i{
+
+font-size:15px;
+
+}
+
+/* ==========================================
+            USER DROPDOWN
+========================================== */
+
+.user-dropdown{
+
+position:absolute;
+
+top:60px;
+
+right:0;
+
+min-width:180px;
+
+background:#ffffff;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+opacity:0;
+
+visibility:hidden;
+
+transform:translateY(10px);
+
+transition:.35s ease;
+
+z-index:999;
+
+}
+
+.user-dropdown a{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:14px 18px;
+
+text-decoration:none;
+
+color:#1e293b;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+.user-dropdown a:hover{
+
+background:#eff6ff;
+
+color:#2563eb;
+
+}
+
+.user-box.active .user-dropdown{
+
+opacity:1;
+
+visibility:visible;
+
+transform:translateY(0);
+
+}
+
+/* ==========================================
+            DARK MODE
+========================================== */
+
+body.dark .user-dropdown{
+
+background:#1e293b;
+
+}
+
+body.dark .user-dropdown a{
+
+color:#ffffff;
+
+}
+
+body.dark .user-dropdown a:hover{
+
+background:#334155;
+
+color:#60a5fa;
+
+}
