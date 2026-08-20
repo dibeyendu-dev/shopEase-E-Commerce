@@ -686,3 +686,20 @@ box-shadow .35s ease,
 transform .35s ease;
 
 }
+body.dark .hero-tag{
+
+background:#1e293b;
+
+color:#60a5fa;
+
+}
+
+body.dark .btn-secondary{
+
+background:#1e293b;
+
+border:2px solid #3b82f6;
+
+color:#ffffff;
+
+}
