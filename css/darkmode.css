@@ -197,3 +197,243 @@ background:#1e293b;
 color:#60a5fa;
 
 }
+/* ==========================================
+            CARDS
+========================================== */
+
+body.dark .product-card,
+body.dark .category-card,
+body.dark .offer-card,
+body.dark .wishlist-card,
+body.dark .cart-card,
+body.dark .feature-card,
+body.dark .testimonial-card,
+body.dark .service-card,
+body.dark .team-card,
+body.dark .faq-item,
+body.dark .contact-card,
+body.dark .mission-card,
+body.dark .vision-card,
+body.dark .stat-card{
+
+background:#1e293b !important;
+
+color:#ffffff;
+
+box-shadow:0 12px 30px rgba(0,0,0,.35);
+
+}
+
+body.dark .product-card:hover,
+body.dark .category-card:hover,
+body.dark .offer-card:hover,
+body.dark .wishlist-card:hover,
+body.dark .cart-card:hover{
+
+box-shadow:0 20px 40px rgba(0,0,0,.45);
+
+}
+
+/* ==========================================
+            CARD TEXT
+========================================== */
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5{
+
+color:#ffffff;
+
+}
+
+body.dark p,
+body.dark span,
+body.dark small,
+body.dark li{
+
+color:#cbd5e1;
+
+}
+
+/* ==========================================
+            BUTTONS
+========================================== */
+
+body.dark .btn-primary,
+body.dark .cart-btn,
+body.dark .shop-btn,
+body.dark .login-btn,
+body.dark .register-btn,
+body.dark .checkout-btn{
+
+background:#2563eb;
+
+color:#ffffff;
+
+}
+
+body.dark .btn-secondary{
+
+background:transparent;
+
+border:2px solid #60a5fa;
+
+color:#60a5fa;
+
+}
+
+body.dark .btn-secondary:hover{
+
+background:#2563eb;
+
+border-color:#2563eb;
+
+color:#ffffff;
+
+}
+
+/* ==========================================
+            FORMS
+========================================== */
+
+body.dark input,
+body.dark textarea,
+body.dark select{
+
+background:#334155;
+
+color:#ffffff;
+
+border:1px solid #475569;
+
+}
+
+body.dark input::placeholder,
+body.dark textarea::placeholder{
+
+color:#94a3b8;
+
+}
+
+body.dark input:focus,
+body.dark textarea:focus,
+body.dark select:focus{
+
+border-color:#3b82f6;
+
+box-shadow:0 0 15px rgba(59,130,246,.25);
+
+}
+
+/* ==========================================
+            TABLES
+========================================== */
+
+body.dark table{
+
+background:#1e293b;
+
+color:#ffffff;
+
+}
+
+body.dark th{
+
+background:#334155;
+
+}
+
+body.dark td{
+
+border-color:#334155;
+
+}
+
+/* ==========================================
+            SIDEBAR
+========================================== */
+
+body.dark .sidebar{
+
+background:#1e293b;
+
+}
+
+body.dark .filter-btn{
+
+background:#334155;
+
+color:#ffffff;
+
+}
+
+body.dark .filter-btn.active{
+
+background:#2563eb;
+
+}
+
+/* ==========================================
+            CONTACT
+========================================== */
+
+body.dark .contact-info,
+body.dark .contact-form{
+
+background:#1e293b;
+
+}
+
+body.dark .contact-box{
+
+background:#334155;
+
+}
+
+/* ==========================================
+            FAQ
+========================================== */
+
+body.dark .faq-question{
+
+background:#1e293b;
+
+color:#ffffff;
+
+}
+
+body.dark .faq-answer{
+
+background:#1e293b;
+
+}
+
+body.dark .faq-item.active{
+
+border-left:5px solid #3b82f6;
+
+}
+
+/* ==========================================
+            FOOTER
+========================================== */
+
+body.dark .footer{
+
+background:#020617;
+
+}
+
+body.dark .footer a{
+
+color:#cbd5e1;
+
+}
+
+body.dark .footer a:hover{
+
+color:#60a5fa;
+
+}
